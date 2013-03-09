@@ -7,6 +7,17 @@
 # Blank lines, and lines beginning with an octothorpe (#) are ignored.
 # See regex(7) for a description of extended regular expressions.
 
+^dist(/|$)
+^cabal-dev(/|$)
+# hakyll tests
+^(_site|_cache)(/|$)
+# more hakyll stuff
+# we may have to unboring these if we want to include an example
+# blog
+^(posts|templates|images|css)(/|$)
+^(about|contact).markdown
+^(import)(/|$)
+^(ericianchronicles|koweycode-.*|koweynlg-.*).xml$
 ### compiler and interpreter intermediate files
 # haskell (ghc) interfaces
 \.hi$
