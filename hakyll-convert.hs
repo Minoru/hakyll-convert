@@ -172,7 +172,26 @@ savePost cfg post = do
 readAtomFile f = do
     parseAtomDoc <$> B.readFile f
   where
-    parseAtomDoc x = elementFeed =<< parseXMLDoc x
+    parseAtomDoc x = elementFeed . deleteDrafts =<< parseXMLDoc x
+
+-- has to be done on the XML level as our atom lib doesn't understand
+-- the blogger-specific XML for drafts
+deleteDrafts :: Element -> Element
+deleteDrafts e =
+    e { elContent = filter isInnocent (elContent e) }
+  where
+    isInnocent (Elem e) = not (isDraft e)
+    isInnocent _ = True
+
+isDraft :: Element -> Bool
+isDraft e =
+    isJust $ findElement draft e
+  where
+    draft = QName
+        { qName   = "draft"
+        , qURI    = Just "http://purl.org/atom/app#"
+        , qPrefix = Just "app"
+        }
 
 entryError e msg =
     error $ msg ++ " [on entry " ++ entryId e ++ "]\n" ++ show e
