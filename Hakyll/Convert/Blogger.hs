@@ -1,60 +1,26 @@
 {-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE OverloadedStrings  #-}
-{-# LANGUAGE ViewPatterns       #-}
+
+module Hakyll.Convert.Blogger where
 
 import           Control.Applicative
 import           Control.Arrow
 import           Control.Monad
-import qualified Data.ByteString        as B
+import           Data.Binary
 import           Data.Char
+import           Data.Data
 import           Data.Function
 import           Data.List
 import           Data.List
 import           Data.Maybe
-import           System.Directory
-import           System.Environment
-import           System.FilePath
+import           Data.Monoid
 
-import           System.Console.CmdArgs
+import           Hakyll.Core.Compiler
+import           Hakyll.Core.Item
+import           Hakyll.Web.Template.Context
 import           Text.Atom.Feed
 import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
 import           Text.XML.Light
-
-data Config = Config
-    { feed      :: FilePath
-    , outputDir :: FilePath
-    }
- deriving (Show, Data, Typeable)
-
-parameters :: FilePath -> Config
-parameters p = modes
-    [ Config
-        { feed         = def &= argPos 0 &= typ "ATOM-FILE"
-        , outputDir    = def &= argPos 1 &= typDir
-        } &= help "Save blog posts Blogger feed into individual posts"
-    ] &= program (takeFileName p)
-
--- ---------------------------------------------------------------------
---
--- ---------------------------------------------------------------------
-
-main = do
-    p      <- getProgName
-    config <- cmdArgs (parameters p)
-    --
-    mfeed <- readAtomFile (feed config)
-    case mfeed of
-        Nothing -> fail $ "Could not understand Atom feed: " ++ feed config
-        Just fd -> processBloggerFeed config fd
-
-processBloggerFeed config fd = do
-    mapM (savePost config) $ extractPosts (feedEntries fd)
-
--- ---------------------------------------------------------------------
--- From Blogger
--- How Blogger represents posts, comments, etc in Atom
--- ---------------------------------------------------------------------
 
 -- | A post and its comments
 data FullPost = FullPost
@@ -62,6 +28,15 @@ data FullPost = FullPost
     , fpComments :: [Entry]
     , fpUri      :: String
     }
+
+data DistilledPost = DistilledPost
+    { dpUri   :: String
+    , dpBody  :: String
+    , dpTitle :: String
+    , dpTags  :: [String]
+    , dpDate  :: String
+    }
+  deriving (Show, Data, Typeable)
 
 -- | An entry is assumed to be either a post, or a comment.
 --   If it's a post, it should be associated with the URI
@@ -78,6 +53,11 @@ beUri :: BloggerEntry -> Maybe String
 beUri (Orphan _)    = Nothing
 beUri (Post u _)    = Just u
 beUri (Comment u _) = Just u
+
+-- ---------------------------------------------------------------------
+-- Feed to helper type
+-- ---------------------------------------------------------------------
+
 
 -- | Warning: this silently ignores orphans, templates, settings
 extractPosts :: [Entry] -> [FullPost]
@@ -100,6 +80,16 @@ extractPosts entries =
     blocks_ = buckets beUri
             $ map identifyEntry
             $ filter isInteresting entries
+
+-- | Contains actual meat (posts, comments; but not eg. templates)
+isInteresting :: Entry -> Bool
+isInteresting e =
+    not $ any isBoring cats
+  where
+    isBoring c = any (\t -> isBloggerCategoryOfType t c) ["settings", "template"]
+    cats       = entryCategories e
+
+
 
 -- | Tag an entry from the blogger feed as either being a post,
 --   a comment, or an "orphan" (a comment without an associated post)
@@ -134,64 +124,89 @@ isBloggerCategoryOfType ty c =
     isBloggerCategory c &&
     catTerm c == "http://schemas.google.com/blogger/2008/kind#" ++ ty
 
--- | Contains actual meat (posts, comments; but not eg. templates)
-isInteresting :: Entry -> Bool
-isInteresting e =
-    not $ any isBoring cats
+-- ---------------------------------------------------------------------
+--
+-- ---------------------------------------------------------------------
+
+-- | A mini feed is a small Atom feed whose first entry is a blog post
+--   and whose subsequent entries are comments
+fromMiniFeed :: Feed -> FullPost
+fromMiniFeed fd =
+    fromMaybe (error oops) (fromMiniFeed_ fd)
   where
-    isBoring c = any (\t -> isBloggerCategoryOfType t c) ["settings", "template"]
-    cats       = entryCategories e
+    oops = "Not a hakyll-convert minifeed"
 
--- ---------------------------------------------------------------------
--- To Hakyll (sort of)
--- Saving feed in bite-sized pieces
--- ---------------------------------------------------------------------
+fromMiniFeed_ :: Feed -> Maybe FullPost
+fromMiniFeed_ fd =
+    case extractPosts (feedEntries fd) of
+        [x] -> Just x
+        _   -> Nothing
 
--- | Save a post along with its comments as a mini atom feed
-savePost :: Config -> FullPost -> IO ()
-savePost cfg post = do
-    putStrLn fname
-    createDirectoryIfMissing True (takeDirectory fname)
-    writeFile fname $ ppElement $ xmlFeed feed
+toMiniFeed :: FullPost -> Feed
+toMiniFeed post =
+    feed_ { feedEntries = fpPost post : fpComments post }
   where
     mainPost = fpPost post
-    feed  = feed_ { feedEntries = fpPost post : fpComments post }
-    feed_ = nullFeed (entryId mainPost) (entryTitle mainPost) (fromMaybe "" $ entryPublished mainPost)
-    odir  = outputDir cfg
-    -- carelessly assumes we can treat URIs like filepaths
-    fname = odir </> dropExtensions (chopUri (fpUri post)) <.> "xml"
-    chopUri (dropPrefix "http://" -> ("",rest)) =
-        joinPath $ drop 1 $ splitPath rest -- drop the domain
-    chopUri u = error $
-        "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
+    feed_ = nullFeed (entryId mainPost)
+                     (entryTitle mainPost)
+                     (fromMaybe "" $ entryPublished mainPost)
 
 -- ---------------------------------------------------------------------
--- utilities
+--
 -- ---------------------------------------------------------------------
 
-readAtomFile f = do
-    parseAtomDoc <$> B.readFile f
+-- Reads mini Atom feed generated by Hakyll convert
+bloggerCompiler :: Compiler (Item DistilledPost)
+bloggerCompiler =
+    withItemBody unwrap =<<
+    (fmap parseAtomDoc <$> getResourceBody)
   where
-    parseAtomDoc x = elementFeed . deleteDrafts =<< parseXMLDoc x
+    unwrap Nothing  = fail "Could not understand feed"
+    unwrap (Just f) = return (distill (fromMiniFeed f))
 
--- has to be done on the XML level as our atom lib doesn't understand
--- the blogger-specific XML for drafts
-deleteDrafts :: Element -> Element
-deleteDrafts e =
-    e { elContent = filter isInnocent (elContent e) }
+feedPrinter :: Item DistilledPost -> Compiler (Item String)
+feedPrinter feedItem = cached cacheName $
+    withItemBody (return . dpBody) feedItem
   where
-    isInnocent (Elem e) = not (isDraft e)
-    isInnocent _ = True
+    cacheName = "Hakyll.Convert.Blogger"
 
-isDraft :: Element -> Bool
-isDraft e =
-    isJust $ findElement draft e
+parseAtomDoc x = elementFeed =<< parseXMLDoc x
+
+distill :: FullPost -> DistilledPost
+distill fp = DistilledPost
+    { dpBody  = body fpost
+    , dpUri   = fpUri fp
+    , dpTitle = title fpost
+    , dpTags  = tags fpost
+    , dpDate  = date fpost
+    }
   where
-    draft = QName
-        { qName   = "draft"
-        , qURI    = Just "http://purl.org/atom/app#"
-        , qPrefix = Just "app"
-        }
+    fpost = fpPost fp
+    --
+    body = fromContent . entryContent
+    fromContent (Just (HTMLContent x)) = x
+    fromContent _ = error "Hakyll.Convert.Blogger.feedPrinter expecting HTML"
+    --
+    title = txtToString . entryTitle
+    tags = map catTerm
+         . filter (not . isBloggerCategory)
+         . entryCategories
+    date x =
+        case entryPublished x of
+            Nothing -> "1970-01-01"
+            Just  d -> d
+
+bloggerContext :: Context DistilledPost
+bloggerContext =
+    fpfield "date" dpDate `mappend`
+    fpfield "body" dpBody `mappend`
+    fpfield "tags" (intercalate ", " . dpTags)
+  where
+    fpfield key f = field key (return . f . itemBody)
+
+-- ---------------------------------------------------------------------
+-- odds and ends
+-- ---------------------------------------------------------------------
 
 entryError e msg =
     error $ msg ++ " [on entry " ++ entryId e ++ "]\n" ++ show e
@@ -202,6 +217,25 @@ buckets f = map (first head . unzip)
           . sortBy (compare `on` fst)
           . map (\x -> (f x, x))
 
-dropPrefix :: Eq a => [a] -> [a] -> ([a],[a])
-dropPrefix (x:xs) (y:ys) | x == y    = dropPrefix xs ys
-dropPrefix left right = (left,right)
+ 
+{-!
+deriving instance Binary DistilledPost
+!-}
+-- GENERATED START
+
+ 
+instance Binary DistilledPost where
+        put (DistilledPost x1 x2 x3 x4 x5)
+          = do put x1
+               put x2
+               put x3
+               put x4
+               put x5
+        get
+          = do x1 <- get
+               x2 <- get
+               x3 <- get
+               x4 <- get
+               x5 <- get
+               return (DistilledPost x1 x2 x3 x4 x5)
+-- GENERATED STOP

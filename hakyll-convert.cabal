@@ -15,9 +15,17 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.8
 
+library
+  exposed-modules:    Hakyll.Convert.Blogger
+  build-depends:       base
+               ,       binary
+               ,       feed
+               ,       hakyll
+               ,       xml
 
 executable hakyll-convert
   main-is:             hakyll-convert.hs
+  hs-source-dirs:      tools
   -- other-modules:       
   build-depends:       base
                ,       bytestring
@@ -25,4 +33,5 @@ executable hakyll-convert
                ,       directory
                ,       feed
                ,       filepath
+               ,       hakyll-convert
                ,       xml
