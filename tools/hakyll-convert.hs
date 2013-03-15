@@ -64,16 +64,25 @@ processBloggerFeed config fd = do
 -- ---------------------------------------------------------------------
 
 -- | Save a post along with its comments as a mini atom feed
-savePost :: Config -> FullPost -> IO ()
+savePost :: Config -> DistilledPost -> IO ()
 savePost cfg post = do
     putStrLn fname
     createDirectoryIfMissing True (takeDirectory fname)
-    writeFile fname $ ppElement $ xmlFeed feed
+    writeFile fname $ unlines
+        [ "---"
+        , metadata "title"     (dpTitle post)
+        , metadata "published" (dpDate post)
+        , metadata "tags"      (intercalate ", " (dpTags post))
+        , "---"
+        , ""
+        , dpBody post
+        ]
   where
-    feed  = toMiniFeed post
+    metadata k v = k ++ ": " ++ v
+    -- feed  = toMiniFeed post
     odir  = outputDir cfg
     -- carelessly assumes we can treat URIs like filepaths
-    fname = odir </> dropExtensions (chopUri (fpUri post)) <.> "xml"
+    fname = odir </> dropExtensions (chopUri (dpUri post)) <.> "markdown"
     chopUri (dropPrefix "http://" -> ("",rest)) =
         joinPath $ drop 1 $ splitPath rest -- drop the domain
     chopUri u = error $
