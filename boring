@@ -17,7 +17,7 @@
 ^(posts|templates|images|css)(/|$)
 ^(about|contact).markdown
 ^(import)(/|$)
-^(ericianchronicles|koweycode-.*|koweynlg-.*).xml$
+^(ericianchronicles|koweycode|koweynlg)
 ### compiler and interpreter intermediate files
 # haskell (ghc) interfaces
 \.hi$
