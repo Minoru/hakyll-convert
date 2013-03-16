@@ -84,7 +84,7 @@ savePost cfg post = do
     metadata k v = k <> ": " <> v
     odir  = outputDir cfg
     --
-    fname    = odir </> postPath <.> "markdown"
+    fname    = odir </> postPath <.> "html"
     postPath = dropExtensions (chopUri (dpUri post))
       where
         chopUri (dropPrefix "http://" -> ("",rest)) =
