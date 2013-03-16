@@ -21,7 +21,9 @@ library
                ,       binary
                ,       feed
                ,       hakyll
+               ,       old-locale
                ,       text
+               ,       time
                ,       xml
 
 executable hakyll-convert

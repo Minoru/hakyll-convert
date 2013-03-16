@@ -16,6 +16,9 @@ import           Data.Maybe
 import           Data.Monoid
 import           Data.Text                    (Text)
 import qualified Data.Text                    as T
+import           Data.Time                    (UTCTime)
+import           Data.Time.Format             (parseTime, formatTime)
+import           System.Locale                (defaultTimeLocale)
 
 import           Hakyll.Core.Compiler
 import           Hakyll.Core.Item
@@ -155,12 +158,12 @@ distill fp = DistilledPost
          . filter (not . isBloggerCategory)
          . entryCategories
     date x = T.pack $
-        case entryPublished x of
+        case parseTime' =<< entryPublished x of
             Nothing -> "1970-01-01"
             Just  d -> formatTime' d
     parseTime'  = parseTime  defaultTimeLocale "%FT%T%Q%z"
     formatTime' :: UTCTime -> String
-    formatTime' = formatTime defaultTimeLocale "%FT%TZ"
+    formatTime' = formatTime defaultTimeLocale "%FT%TZ" --for hakyll
 
 -- ---------------------------------------------------------------------
 -- odds and ends

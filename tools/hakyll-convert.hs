@@ -89,6 +89,9 @@ savePost cfg post = do
         joinPath $ drop 1 $ splitPath rest -- drop the domain
     chopUri u = error $
         "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
+    -- hakyll 4.2 can't parse the subsecond stuff, nor do we really care
+    cleanDate d = case T.breakOn "." d of
+        (prefix, suffix) -> prefix <> snd (T.breakOn "+" suffix)
 
 -- ---------------------------------------------------------------------
 -- utilities
