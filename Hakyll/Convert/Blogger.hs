@@ -161,7 +161,10 @@ distill fp = DistilledPost
         case parseTime' =<< entryPublished x of
             Nothing -> "1970-01-01"
             Just  d -> formatTime' d
-    parseTime'  = parseTime  defaultTimeLocale "%FT%T%Q%z"
+    parseTime' d = msum $ map (\f -> parseTime defaultTimeLocale f d)
+        [ "%FT%T%Q%z"  -- with time zone
+        , "%FT%T%QZ"   -- zulu time
+        ]
     formatTime' :: UTCTime -> String
     formatTime' = formatTime defaultTimeLocale "%FT%TZ" --for hakyll
 
