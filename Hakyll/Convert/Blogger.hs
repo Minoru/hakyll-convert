@@ -28,21 +28,14 @@ import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
 import           Text.XML.Light
 
+import           Hakyll.Convert.Common
+
 -- | A post and its comments
 data FullPost = FullPost
     { fpPost     :: Entry
     , fpComments :: [Entry]
     , fpUri      :: String
     }
-
-data DistilledPost = DistilledPost
-    { dpUri   :: String
-    , dpBody  :: Text
-    , dpTitle :: Maybe Text
-    , dpTags  :: [Text]
-    , dpDate  :: Text
-    }
-  deriving (Show, Data, Typeable)
 
 -- | An entry is assumed to be either a post, or a comment.
 --   If it's a post, it should be associated with the URI

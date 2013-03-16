@@ -17,6 +17,7 @@ cabal-version:       >=1.8
 
 library
   exposed-modules:    Hakyll.Convert.Blogger
+                 ,    Hakyll.Convert.Common
   build-depends:       base
                ,       binary
                ,       feed

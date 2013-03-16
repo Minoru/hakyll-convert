@@ -25,6 +25,7 @@ import           Text.Atom.Feed.Import
 import           Text.XML.Light
 
 import           Hakyll.Convert.Blogger
+import           Hakyll.Convert.Common
 
 data Config = Config
     { feed      :: FilePath
