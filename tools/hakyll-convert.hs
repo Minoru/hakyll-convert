@@ -79,7 +79,7 @@ savePost cfg post = do
         , metadata "tags"      (formatTags  (dpTags  post))
         , "---"
         , ""
-        , dpBody post
+        , formatBody (dpBody post)
         ]
   where
     metadata k v = k <> ": " <> v
@@ -101,6 +101,29 @@ savePost cfg post = do
         firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
     formatDate  = id
     formatTags  = T.intercalate ","
+    formatBody  = id
+
+{-
+-- Ugh! convert br tags inside of pre tags
+fixupBloggerHtml :: Content -> Content
+fixupBloggerHtml = descendElem $ \e ->
+    if elName e == unqual "pre"
+       then Just . Elem $
+                e { elContent = map (descendElem fixBr) (elContent e) }
+       else Nothing
+  where
+    fixBr e =
+       if elName e == unqual "br"
+          then Just (Text newline)
+          else Nothing
+    newline = CData CDataRaw "\n" Nothing
+
+descendElem pred (Elem e) =
+   case pred e of
+       Nothing -> Elem $ e  { elContent = map (descendElem pred) (elContent e) }
+       Just e2 -> e2
+descendElem _ x = x
+-}
 
 -- ---------------------------------------------------------------------
 -- utilities
