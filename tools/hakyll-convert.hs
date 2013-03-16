@@ -73,9 +73,9 @@ savePost cfg post = do
     createDirectoryIfMissing True (takeDirectory fname)
     B.writeFile fname . T.encodeUtf8 $ T.unlines
         [ "---"
-        , metadata "title" (dpTitle post)
-        , metadata "date"  (cleanDate (dpDate post))
-        , metadata "tags"  (T.intercalate ", " (dpTags post))
+        , metadata "title"      (dpTitle post)
+        , metadata "published"  (formatDate (dpDate post))
+        , metadata "tags"       (formatTags (dpTags post))
         , "---"
         , ""
         , dpBody post
@@ -90,8 +90,9 @@ savePost cfg post = do
     chopUri u = error $
         "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
     -- hakyll 4.2 can't parse the subsecond stuff, nor do we really care
-    cleanDate d = case T.breakOn "." d of
+    formatDate d = case T.breakOn "." d of
         (prefix, suffix) -> prefix <> snd (T.breakOn "+" suffix)
+    formatTags = T.intercalate ","
 
 -- ---------------------------------------------------------------------
 -- utilities
