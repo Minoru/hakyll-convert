@@ -11,6 +11,9 @@ import           Data.Function
 import           Data.List
 import           Data.List
 import           Data.Maybe
+import           Data.Monoid
+import qualified Data.Text              as T
+import qualified Data.Text.Encoding     as T
 import           System.Directory
 import           System.Environment
 import           System.FilePath
@@ -68,18 +71,17 @@ savePost :: Config -> DistilledPost -> IO ()
 savePost cfg post = do
     putStrLn fname
     createDirectoryIfMissing True (takeDirectory fname)
-    writeFile fname $ unlines
+    B.writeFile fname . T.encodeUtf8 $ T.unlines
         [ "---"
-        , metadata "title"     (dpTitle post)
-        , metadata "published" (dpDate post)
-        , metadata "tags"      (intercalate ", " (dpTags post))
+        , metadata "title" (dpTitle post)
+        , metadata "date"  (cleanDate (dpDate post))
+        , metadata "tags"  (T.intercalate ", " (dpTags post))
         , "---"
         , ""
         , dpBody post
         ]
   where
-    metadata k v = k ++ ": " ++ v
-    -- feed  = toMiniFeed post
+    metadata k v = k <> ": " <> v
     odir  = outputDir cfg
     -- carelessly assumes we can treat URIs like filepaths
     fname = odir </> dropExtensions (chopUri (dpUri post)) <.> "markdown"
@@ -95,7 +97,7 @@ savePost cfg post = do
 readAtomFile f = do
     parseAtomDoc <$> B.readFile f
   where
-    parseAtomDoc x = elementFeed . deleteDrafts =<< parseXMLDoc x
+    parseAtomDoc x = elementFeed . deleteDrafts =<< parseXMLDoc (T.decodeUtf8 x)
 
 -- has to be done on the XML level as our atom lib doesn't understand
 -- the blogger-specific XML for drafts

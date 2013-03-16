@@ -1,4 +1,5 @@
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE OverloadedStrings  #-}
 
 module Hakyll.Convert.Blogger where
 
@@ -13,6 +14,8 @@ import           Data.List
 import           Data.List
 import           Data.Maybe
 import           Data.Monoid
+import           Data.Text                    (Text)
+import qualified Data.Text                    as T
 
 import           Hakyll.Core.Compiler
 import           Hakyll.Core.Item
@@ -31,10 +34,10 @@ data FullPost = FullPost
 
 data DistilledPost = DistilledPost
     { dpUri   :: String
-    , dpBody  :: String
-    , dpTitle :: String
-    , dpTags  :: [String]
-    , dpDate  :: String
+    , dpBody  :: Text
+    , dpTitle :: Text
+    , dpTags  :: [Text]
+    , dpDate  :: Text
     }
   deriving (Show, Data, Typeable)
 
@@ -142,14 +145,16 @@ distill fp = DistilledPost
     fpost = fpPost fp
     --
     body = fromContent . entryContent
-    fromContent (Just (HTMLContent x)) = x
-    fromContent _ = error "Hakyll.Convert.Blogger.feedPrinter expecting HTML"
+    fromContent (Just (HTMLContent x)) = T.pack x
+    fromContent _ = error "Hakyll.Convert.Blogger.distill expecting HTML"
     --
-    title = txtToString . entryTitle
-    tags = map catTerm
+    title p = case txtToString (entryTitle p) of
+         "" -> "untitled"
+         t  -> T.pack t
+    tags = map (T.pack . catTerm)
          . filter (not . isBloggerCategory)
          . entryCategories
-    date x =
+    date x = T.pack $
         case entryPublished x of
             Nothing -> "1970-01-01"
             Just  d -> formatTime' d

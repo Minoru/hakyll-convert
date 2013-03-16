@@ -21,6 +21,7 @@ library
                ,       binary
                ,       feed
                ,       hakyll
+               ,       text
                ,       xml
 
 executable hakyll-convert
@@ -34,4 +35,5 @@ executable hakyll-convert
                ,       feed
                ,       filepath
                ,       hakyll-convert
+               ,       text
                ,       xml
