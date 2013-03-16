@@ -135,6 +135,7 @@ distill fp = DistilledPost
     , dpUri   = fpUri fp
     , dpTitle = title fpost
     , dpTags  = tags fpost
+    , dpCategories = []
     , dpDate  = date fpost
     }
   where
