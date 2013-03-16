@@ -38,7 +38,7 @@ data FullPost = FullPost
 data DistilledPost = DistilledPost
     { dpUri   :: String
     , dpBody  :: Text
-    , dpTitle :: Text
+    , dpTitle :: Maybe Text
     , dpTags  :: [Text]
     , dpDate  :: Text
     }
@@ -152,8 +152,8 @@ distill fp = DistilledPost
     fromContent _ = error "Hakyll.Convert.Blogger.distill expecting HTML"
     --
     title p = case txtToString (entryTitle p) of
-         "" -> "untitled"
-         t  -> T.pack t
+         "" -> Nothing
+         t  -> Just (T.pack t)
     tags = map (T.pack . catTerm)
          . filter (not . isBloggerCategory)
          . entryCategories

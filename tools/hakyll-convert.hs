@@ -73,9 +73,9 @@ savePost cfg post = do
     createDirectoryIfMissing True (takeDirectory fname)
     B.writeFile fname . T.encodeUtf8 $ T.unlines
         [ "---"
-        , metadata "title"      (dpTitle post)
-        , metadata "published"  (formatDate (dpDate post))
-        , metadata "tags"       (formatTags (dpTags post))
+        , metadata "title"     (formatTitle (dpTitle post))
+        , metadata "published" (formatDate  (dpDate  post))
+        , metadata "tags"      (formatTags  (dpTags  post))
         , "---"
         , ""
         , dpBody post
@@ -83,16 +83,23 @@ savePost cfg post = do
   where
     metadata k v = k <> ": " <> v
     odir  = outputDir cfg
-    -- carelessly assumes we can treat URIs like filepaths
-    fname = odir </> dropExtensions (chopUri (dpUri post)) <.> "markdown"
-    chopUri (dropPrefix "http://" -> ("",rest)) =
-        joinPath $ drop 1 $ splitPath rest -- drop the domain
-    chopUri u = error $
-        "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
-    -- hakyll 4.2 can't parse the subsecond stuff, nor do we really care
-    formatDate d = case T.breakOn "." d of
-        (prefix, suffix) -> prefix <> snd (T.breakOn "+" suffix)
-    formatTags = T.intercalate ","
+    --
+    fname    = odir </> postPath <.> "markdown"
+    postPath = dropExtensions (chopUri (dpUri post))
+      where
+        chopUri (dropPrefix "http://" -> ("",rest)) =
+           -- carelessly assumes we can treat URIs like filepaths
+           joinPath $ drop 1 $ splitPath rest -- drop the domain
+        chopUri u = error $
+           "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
+    --
+    formatTitle (Just t) = t
+    formatTitle Nothing  =
+        "untitled (" <> T.unwords firstFewWords <> "…)"
+      where
+        firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
+    formatDate  = id
+    formatTags  = T.intercalate ","
 
 -- ---------------------------------------------------------------------
 -- utilities
