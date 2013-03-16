@@ -57,6 +57,26 @@ beUri (Comment u _) = Just u
 -- Feed to helper type
 -- ---------------------------------------------------------------------
 
+-- has to be done on the XML level as our atom lib doesn't understand
+-- the blogger-specific XML for drafts
+deleteDrafts :: Element -> Element
+deleteDrafts e =
+    e { elContent = filter isInnocent (elContent e) }
+  where
+    isInnocent (Elem e) = not (isDraft e)
+    isInnocent _ = True
+
+isDraft :: Element -> Bool
+isDraft e =
+    isJust $ findElement draft e
+  where
+    draft = QName
+        { qName   = "draft"
+        , qURI    = Just "http://purl.org/atom/app#"
+        , qPrefix = Just "app"
+        }
+
+
 
 -- | Warning: this silently ignores orphans, templates, settings
 extractPosts :: [Entry] -> [FullPost]
