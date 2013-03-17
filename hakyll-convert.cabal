@@ -33,7 +33,7 @@ executable hakyll-convert
   main-is:             hakyll-convert.hs
   hs-source-dirs:      tools
   -- other-modules:       
-  build-depends:       base
+  build-depends:       base < 5
                ,       bytestring
                ,       cmdargs
                ,       directory
