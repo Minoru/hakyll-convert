@@ -1,12 +1,14 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
-
-module Hakyll.Convert.Blogger where
+module Hakyll.Convert.Blogger
+    (FullPost(..), readPosts, distill)
+  where
 
 import           Control.Applicative
 import           Control.Arrow
 import           Control.Monad
 import           Data.Binary
+import qualified Data.ByteString             as B
 import           Data.Char
 import           Data.Data
 import           Data.Function
@@ -16,6 +18,7 @@ import           Data.Maybe
 import           Data.Monoid
 import           Data.Text                    (Text)
 import qualified Data.Text                    as T
+import qualified Data.Text.Encoding           as T
 import           Data.Time                    (UTCTime)
 import           Data.Time.Format             (parseTime, formatTime)
 import           System.Locale                (defaultTimeLocale)
@@ -56,6 +59,16 @@ beUri (Comment u _) = Just u
 -- ---------------------------------------------------------------------
 -- Feed to helper type
 -- ---------------------------------------------------------------------
+
+-- | Returns only published posts
+readPosts :: FilePath -> IO (Maybe [FullPost])
+readPosts f = do
+    parseAtomDoc <$> B.readFile f
+  where
+    parseAtomDoc x =
+        select =<< parseXMLDoc (T.decodeUtf8 x)
+    select =
+        fmap (extractPosts . feedEntries) . elementFeed . deleteDrafts
 
 -- has to be done on the XML level as our atom lib doesn't understand
 -- the blogger-specific XML for drafts
@@ -109,7 +122,6 @@ isInteresting e =
     cats       = entryCategories e
 
 
-
 -- | Tag an entry from the blogger feed as either being a post,
 --   a comment, or an "orphan" (a comment without an associated post)
 identifyEntry :: Entry -> BloggerEntry
@@ -146,8 +158,6 @@ isBloggerCategoryOfType ty c =
 -- ---------------------------------------------------------------------
 --
 -- ---------------------------------------------------------------------
-
-parseAtomDoc x = elementFeed =<< parseXMLDoc x
 
 distill :: FullPost -> DistilledPost
 distill fp = DistilledPost

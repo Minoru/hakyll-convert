@@ -18,8 +18,10 @@ cabal-version:       >=1.8
 library
   exposed-modules:    Hakyll.Convert.Blogger
                  ,    Hakyll.Convert.Common
+                 ,    Hakyll.Convert.Wordpress
   build-depends:       base
                ,       binary
+               ,       bytestring
                ,       feed
                ,       hakyll
                ,       old-locale

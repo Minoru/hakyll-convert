@@ -19,25 +19,34 @@ import           System.Environment
 import           System.FilePath
 
 import           System.Console.CmdArgs
+import           Text.RSS.Export
+import           Text.RSS.Import
+import           Text.RSS.Syntax
 import           Text.Atom.Feed
 import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
 import           Text.XML.Light
 
-import           Hakyll.Convert.Blogger
 import           Hakyll.Convert.Common
+import qualified Hakyll.Convert.Blogger   as Blogger
+import qualified Hakyll.Convert.Wordpress as Wordpress
+
+data InputFormat = Blogger | Wordpress
+  deriving (Data, Typeable, Enum, Show)
 
 data Config = Config
     { feed      :: FilePath
     , outputDir :: FilePath
+    , format    :: InputFormat
     }
  deriving (Show, Data, Typeable)
 
 parameters :: FilePath -> Config
 parameters p = modes
     [ Config
-        { feed         = def &= argPos 0 &= typ "ATOM-FILE"
+        { feed         = def &= argPos 0 &= typ "ATOM/RSS FILE"
         , outputDir    = def &= argPos 1 &= typDir
+        , format       = Blogger &= help "blogger or wordpress"
         } &= help "Save blog posts Blogger feed into individual posts"
     ] &= program (takeFileName p)
 
@@ -48,19 +57,27 @@ parameters p = modes
 main = do
     p      <- getProgName
     config <- cmdArgs (parameters p)
-    --
-    mfeed <- readAtomFile (feed config)
+    case format config of
+        Blogger   -> mainBlogger   config
+        Wordpress -> mainWordPress config
+
+mainBlogger :: Config -> IO ()
+mainBlogger config = do
+    mfeed <- Blogger.readPosts (feed config)
     case mfeed of
         Nothing -> fail $ "Could not understand Atom feed: " ++ feed config
-        Just fd -> processBloggerFeed config fd
+        Just fd -> mapM_ process fd
+  where
+    process = savePost config "html" . Blogger.distill
 
-processBloggerFeed config fd = do
-    mapM (savePost config) $ map distill $ extractPosts (feedEntries fd)
-
--- ---------------------------------------------------------------------
--- From Blogger
--- How Blogger represents posts, comments, etc in Atom
--- ---------------------------------------------------------------------
+mainWordPress :: Config -> IO ()
+mainWordPress config = do
+    mfeed <- Wordpress.readPosts (feed config)
+    case mfeed of
+        Nothing -> fail $ "Could not understand RSS feed: " ++ feed config
+        Just fd -> mapM_ process fd
+  where
+    process = savePost config "markdown" . Wordpress.distill
 
 -- ---------------------------------------------------------------------
 -- To Hakyll (sort of)
@@ -68,14 +85,15 @@ processBloggerFeed config fd = do
 -- ---------------------------------------------------------------------
 
 -- | Save a post along with its comments as a mini atom feed
-savePost :: Config -> DistilledPost -> IO ()
-savePost cfg post = do
+savePost :: Config -> String -> DistilledPost -> IO ()
+savePost cfg ext post = do
     putStrLn fname
     createDirectoryIfMissing True (takeDirectory fname)
     B.writeFile fname . T.encodeUtf8 $ T.unlines
         [ "---"
         , metadata "title"     (formatTitle (dpTitle post))
         , metadata "published" (formatDate  (dpDate  post))
+        , metadata "categories" (formatTags (dpCategories post))
         , metadata "tags"      (formatTags  (dpTags  post))
         , "---"
         , ""
@@ -85,12 +103,16 @@ savePost cfg post = do
     metadata k v = k <> ": " <> v
     odir  = outputDir cfg
     --
-    fname    = odir </> postPath <.> "html"
-    postPath = dropExtensions (chopUri (dpUri post))
+    fname    = odir </> postPath <.> ext
+    postPath = dropTrailingSlash
+             . dropExtensions
+             $ chopUri (dpUri post)
       where
+        dropTrailingSlash = reverse . dropWhile (== '/') . reverse
         chopUri (dropPrefix "http://" -> ("",rest)) =
            -- carelessly assumes we can treat URIs like filepaths
-           joinPath $ drop 1 $ splitPath rest -- drop the domain
+           joinPath $ drop 1 -- drop the domain
+                    $ splitPath rest
         chopUri u = error $
            "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
     --
@@ -128,11 +150,6 @@ descendElem _ x = x
 -- ---------------------------------------------------------------------
 -- utilities
 -- ---------------------------------------------------------------------
-
-readAtomFile f = do
-    parseAtomDoc <$> B.readFile f
-  where
-    parseAtomDoc x = elementFeed . deleteDrafts =<< parseXMLDoc (T.decodeUtf8 x)
 
 dropPrefix :: Eq a => [a] -> [a] -> ([a],[a])
 dropPrefix (x:xs) (y:ys) | x == y    = dropPrefix xs ys
