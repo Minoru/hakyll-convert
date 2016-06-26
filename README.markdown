@@ -10,7 +10,9 @@ We aim to
   HTML and should stay as such without passing through filters)
 * allow for the possibility of [Cool URIs][cool-uris] by keeping
   relative page names the same as on your old blog (this only works
-  if you use your own domain for your hosted site)
+  if you use your own domain for your hosted site). If you don't agree with us
+  on that point, use `--output-format` flag to specify your own output filename
+  format.
 
 [hakyll]:    http://jaspervdj.be/hakyll/
 [cool-uris]: http://www.w3.org/Provider/Style/URI.html
