@@ -24,7 +24,6 @@ library
                ,       bytestring
                ,       feed
                ,       hakyll
-               ,       old-locale
                ,       text
                ,       time
                ,       xml

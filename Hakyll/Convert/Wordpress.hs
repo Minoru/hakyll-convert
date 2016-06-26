@@ -10,8 +10,7 @@ import           Data.Maybe
 import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
 import           Data.Time              (UTCTime)
-import           Data.Time.Format       (parseTime, formatTime)
-import           System.Locale          (defaultTimeLocale, rfc822DateFormat)
+import           Data.Time.Format       (parseTimeM, formatTime, defaultTimeLocale, rfc822DateFormat)
 import           Text.XML.Light
 import           Text.RSS.Import
 import           Text.RSS.Syntax
@@ -59,7 +58,7 @@ distill item = DistilledPost
     date = case parseTime' =<< rssItemPubDate item of
                Nothing -> "1970-01-01"
                Just d  -> T.pack (formatTime' d)
-    parseTime' d = msum $ map (\f -> parseTime defaultTimeLocale f d)
+    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
         [ rfc822DateFormat
         ]
     formatTime' :: UTCTime -> String
