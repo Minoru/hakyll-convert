@@ -21,7 +21,7 @@ import           Data.Text                    (Text)
 import qualified Data.Text                    as T
 import qualified Data.Text.Encoding           as T
 import           Data.Time                    (UTCTime)
-import           Data.Time.Format             (parseTimeM, formatTime, defaultTimeLocale)
+import           Data.Time.Format             (parseTimeM, defaultTimeLocale)
 
 import           Hakyll.Core.Compiler
 import           Hakyll.Core.Item
@@ -181,16 +181,13 @@ distill fp = DistilledPost
     tags = map (T.pack . catTerm)
          . filter (not . isBloggerCategory)
          . entryCategories
-    date x = T.pack $
-        case parseTime' =<< entryPublished x of
-            Nothing -> "1970-01-01"
-            Just  d -> formatTime' d
+    date x = case parseTime' =<< entryPublished x of
+                 Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
+                 Just  d -> d
     parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
         [ "%FT%T%Q%z"  -- with time zone
         , "%FT%T%QZ"   -- zulu time
         ]
-    formatTime' :: UTCTime -> String
-    formatTime' = formatTime defaultTimeLocale "%FT%TZ" --for hakyll
 
 -- ---------------------------------------------------------------------
 -- odds and ends

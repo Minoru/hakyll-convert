@@ -56,13 +56,11 @@ distill item = DistilledPost
         }
     --
     date = case parseTime' =<< rssItemPubDate item of
-               Nothing -> "1970-01-01"
-               Just d  -> T.pack (formatTime' d)
+               Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
+               Just  d -> d
     parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
         [ rfc822DateFormat
         ]
-    formatTime' :: UTCTime -> String
-    formatTime' = formatTime defaultTimeLocale "%FT%TZ" --for hakyll
 
 -- ---------------------------------------------------------------------
 -- helpers

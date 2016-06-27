@@ -40,4 +40,5 @@ executable hakyll-convert
                ,       filepath
                ,       hakyll-convert
                ,       text
+               ,       time
                ,       xml

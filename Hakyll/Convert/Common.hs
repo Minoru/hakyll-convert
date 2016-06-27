@@ -6,6 +6,7 @@ module Hakyll.Convert.Common where
 import           Data.Data
 import           Data.Text                    (Text)
 import qualified Data.Text                    as T
+import           Data.Time.Clock              (UTCTime)
 
 data DistilledPost = DistilledPost
     { dpUri   :: String
@@ -16,6 +17,6 @@ data DistilledPost = DistilledPost
     --   interested in ignoring tags and just focusing on categories
     --   in cases where you have lots of little uninteresting tags.
     , dpCategories :: [Text]
-    , dpDate  :: Text
+    , dpDate  :: UTCTime
     }
-  deriving (Show, Data, Typeable)
+  deriving (Data, Typeable)

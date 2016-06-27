@@ -14,6 +14,7 @@ import           Data.Maybe
 import           Data.Monoid
 import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
+import           Data.Time.Format             (formatTime, defaultTimeLocale)
 import           System.Directory
 import           System.Environment
 import           System.FilePath
@@ -121,7 +122,7 @@ savePost cfg ext post = do
         "untitled (" <> T.unwords firstFewWords <> "…)"
       where
         firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
-    formatDate  = id
+    formatDate  = T.pack . formatTime defaultTimeLocale "%FT%TZ" --for hakyll
     formatTags  = T.intercalate ","
     formatBody  = id
 
