@@ -36,22 +36,24 @@ data InputFormat = Blogger | Wordpress
   deriving (Data, Typeable, Enum, Show)
 
 data Config = Config
-    { feed          :: FilePath
-    , outputDir     :: FilePath
+    { feed             :: FilePath
+    , outputDir        :: FilePath
     -- underscore will be turned into a dash when generating a commandline
     -- option
-    , output_format :: T.Text
-    , format        :: InputFormat
+    , output_format    :: T.Text
+    , format           :: InputFormat
+    , extract_comments :: Bool
     }
  deriving (Show, Data, Typeable)
 
 parameters :: FilePath -> Config
 parameters p = modes
     [ Config
-        { feed          = def &= argPos 0 &= typ "ATOM/RSS FILE"
-        , outputDir     = def &= argPos 1 &= typDir
-        , output_format = "%o" &= help outputFormatHelp
-        , format        = Blogger &= help "blogger or wordpress"
+        { feed             = def &= argPos 0 &= typ "ATOM/RSS FILE"
+        , outputDir        = def &= argPos 1 &= typDir
+        , output_format    = "%o" &= help outputFormatHelp
+        , format           = Blogger &= help "blogger or wordpress"
+        , extract_comments = False &= help "Extract comments (Blogger only)"
         } &= help "Save blog posts Blogger feed into individual posts"
     ] &= program (takeFileName p)
 
@@ -94,7 +96,7 @@ mainBlogger config = do
         Nothing -> fail $ "Could not understand Atom feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process = savePost config "html" . Blogger.distill
+    process = savePost config "html" . Blogger.distill (extract_comments config)
 
 mainWordPress :: Config -> IO ()
 mainWordPress config = do

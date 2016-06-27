@@ -159,8 +159,8 @@ isBloggerCategoryOfType ty c =
 --
 -- ---------------------------------------------------------------------
 
-distill :: FullPost -> DistilledPost
-distill fp = DistilledPost
+distill :: Bool -> FullPost -> DistilledPost
+distill extractComments fp = DistilledPost
     { dpBody  = body fpost
     , dpUri   = fpUri fp
     , dpTitle = title fpost
@@ -169,11 +169,37 @@ distill fp = DistilledPost
     , dpDate  = date fpost
     }
   where
-    fpost = fpPost fp
+    fpost     = fpPost fp
+    fcomments = fpComments fp
     --
-    body = fromContent . entryContent
+    body post =
+      let article = fromContent $ entryContent post
+          comments = T.intercalate "\n" $ map formatComment fcomments
+      in if extractComments
+           then T.intercalate "\n"
+                              [ article
+                              , ""
+                              , "<h3 id='hakyll-convert-comments-title'>Comments</h3>"
+                              , comments]
+           else article
+
     fromContent (Just (HTMLContent x)) = T.pack x
     fromContent _ = error "Hakyll.Convert.Blogger.distill expecting HTML"
+
+    formatComment c = T.intercalate "\n" [
+        "<div class='hakyll-convert-comment'>"
+      , T.concat [ "<p class='hakyll-convert-comment-date'>"
+                 , "On ", pubdate, ", ", author, " wrote:"
+                 , "</p>" ]
+      , "<div class='hakyll-convert-comment-body'>", comment, "</div>"
+      , "</div>"
+      ]
+      where
+      pubdate = case entryPublished c of
+                    Just d  -> T.pack d
+                    Nothing -> "unknown date"
+      author = T.unwords $ map (T.pack . personName) (entryAuthors c)
+      comment = fromContent $ entryContent c
     --
     title p = case txtToString (entryTitle p) of
          "" -> Nothing
