@@ -1,5 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
+{-# LANGUAGE FlexibleContexts   #-}
 module Hakyll.Convert.Blogger
     (FullPost(..), readPosts, distill)
   where
@@ -20,8 +21,7 @@ import           Data.Text                    (Text)
 import qualified Data.Text                    as T
 import qualified Data.Text.Encoding           as T
 import           Data.Time                    (UTCTime)
-import           Data.Time.Format             (parseTime, formatTime)
-import           System.Locale                (defaultTimeLocale)
+import           Data.Time.Format             (parseTimeM, formatTime, defaultTimeLocale)
 
 import           Hakyll.Core.Compiler
 import           Hakyll.Core.Item
@@ -185,7 +185,7 @@ distill fp = DistilledPost
         case parseTime' =<< entryPublished x of
             Nothing -> "1970-01-01"
             Just  d -> formatTime' d
-    parseTime' d = msum $ map (\f -> parseTime defaultTimeLocale f d)
+    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
         [ "%FT%T%Q%z"  -- with time zone
         , "%FT%T%QZ"   -- zulu time
         ]
