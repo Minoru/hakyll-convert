@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                hakyll-convert
-version:             0.1.0.0
+version:             0.2.0.0
 synopsis:            Convert from other blog engines to Hakyll.
 description:         WordPress and Blogger only let one export posts in
                      a limited number of formats, none of which are supported
