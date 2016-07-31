@@ -1,6 +1,5 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
-{-# LANGUAGE ViewPatterns       #-}
 
 import           Control.Applicative
 import           Control.Arrow
@@ -14,6 +13,7 @@ import           Data.Maybe
 import           Data.Monoid
 import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
+import           Data.Time.Format             (formatTime, defaultTimeLocale)
 import           System.Directory
 import           System.Environment
 import           System.FilePath
@@ -28,6 +28,7 @@ import           Text.Atom.Feed.Import
 import           Text.XML.Light
 
 import           Hakyll.Convert.Common
+import           Hakyll.Convert.OutputFormat
 import qualified Hakyll.Convert.Blogger   as Blogger
 import qualified Hakyll.Convert.Wordpress as Wordpress
 
@@ -35,20 +36,40 @@ data InputFormat = Blogger | Wordpress
   deriving (Data, Typeable, Enum, Show)
 
 data Config = Config
-    { feed      :: FilePath
-    , outputDir :: FilePath
-    , format    :: InputFormat
+    { feed          :: FilePath
+    , outputDir     :: FilePath
+    -- underscore will be turned into a dash when generating a commandline
+    -- option
+    , output_format :: T.Text
+    , format        :: InputFormat
     }
  deriving (Show, Data, Typeable)
 
 parameters :: FilePath -> Config
 parameters p = modes
     [ Config
-        { feed         = def &= argPos 0 &= typ "ATOM/RSS FILE"
-        , outputDir    = def &= argPos 1 &= typDir
-        , format       = Blogger &= help "blogger or wordpress"
+        { feed          = def &= argPos 0 &= typ "ATOM/RSS FILE"
+        , outputDir     = def &= argPos 1 &= typDir
+        , output_format = "%o" &= help outputFormatHelp
+        , format        = Blogger &= help "blogger or wordpress"
         } &= help "Save blog posts Blogger feed into individual posts"
     ] &= program (takeFileName p)
+
+outputFormatHelp = unlines [
+    "Output filenames format (without extension)"
+  , "Default: %o"
+  , "Available formats:"
+  , "  %% - literal percent sign"
+  , "  %o - original filename (e.g. 2016/01/02/blog-post)"
+  , "  %s - original slug (e.g. \"blog-post\")"
+  , "  %y - publication year, 2 digits"
+  , "  %Y - publication year, 4 digits"
+  , "  %m - publication month"
+  , "  %d - publication day"
+  , "  %H - publication hour"
+  , "  %M - publication minute"
+  , "  %S - publication second"
+  ]
 
 -- ---------------------------------------------------------------------
 --
@@ -57,9 +78,14 @@ parameters p = modes
 main = do
     p      <- getProgName
     config <- cmdArgs (parameters p)
-    case format config of
-        Blogger   -> mainBlogger   config
-        Wordpress -> mainWordPress config
+
+    let ofmt = output_format config
+
+    if not (T.null ofmt || validOutputFormat ofmt)
+      then fail $ "Invalid output format string: `" ++ T.unpack (output_format config) ++ "'"
+      else case format config of
+               Blogger   -> mainBlogger   config
+               Wordpress -> mainWordPress config
 
 mainBlogger :: Config -> IO ()
 mainBlogger config = do
@@ -104,53 +130,13 @@ savePost cfg ext post = do
     odir  = outputDir cfg
     --
     fname    = odir </> postPath <.> ext
-    postPath = dropTrailingSlash
-             . dropExtensions
-             $ chopUri (dpUri post)
-      where
-        dropTrailingSlash = reverse . dropWhile (== '/') . reverse
-        chopUri (dropPrefix "http://" -> ("",rest)) =
-           -- carelessly assumes we can treat URIs like filepaths
-           joinPath $ drop 1 -- drop the domain
-                    $ splitPath rest
-        chopUri u = error $
-           "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
+    postPath = T.unpack $ fromJust $ formatPath (output_format cfg) post
     --
     formatTitle (Just t) = t
     formatTitle Nothing  =
         "untitled (" <> T.unwords firstFewWords <> "…)"
       where
         firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
-    formatDate  = id
+    formatDate  = T.pack . formatTime defaultTimeLocale "%FT%TZ" --for hakyll
     formatTags  = T.intercalate ","
     formatBody  = id
-
-{-
--- Ugh! convert br tags inside of pre tags
-fixupBloggerHtml :: Content -> Content
-fixupBloggerHtml = descendElem $ \e ->
-    if elName e == unqual "pre"
-       then Just . Elem $
-                e { elContent = map (descendElem fixBr) (elContent e) }
-       else Nothing
-  where
-    fixBr e =
-       if elName e == unqual "br"
-          then Just (Text newline)
-          else Nothing
-    newline = CData CDataRaw "\n" Nothing
-
-descendElem pred (Elem e) =
-   case pred e of
-       Nothing -> Elem $ e  { elContent = map (descendElem pred) (elContent e) }
-       Just e2 -> e2
-descendElem _ x = x
--}
-
--- ---------------------------------------------------------------------
--- utilities
--- ---------------------------------------------------------------------
-
-dropPrefix :: Eq a => [a] -> [a] -> ([a],[a])
-dropPrefix (x:xs) (y:ys) | x == y    = dropPrefix xs ys
-dropPrefix left right = (left,right)

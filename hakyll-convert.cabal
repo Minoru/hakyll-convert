@@ -19,10 +19,14 @@ library
   exposed-modules:    Hakyll.Convert.Blogger
                  ,    Hakyll.Convert.Common
                  ,    Hakyll.Convert.Wordpress
+                 ,    Hakyll.Convert.OutputFormat
   build-depends:       base
                ,       binary
                ,       bytestring
+               ,       containers
+               ,       data-default
                ,       feed
+               ,       filepath
                ,       hakyll
                ,       text
                ,       time
@@ -40,4 +44,5 @@ executable hakyll-convert
                ,       filepath
                ,       hakyll-convert
                ,       text
+               ,       time
                ,       xml
