@@ -5,11 +5,11 @@ name:                hakyll-convert
 version:             0.1.0.0
 synopsis:            Convert from other blog engines to Hakyll.
 -- description:         
-homepage:            http://github.com/kowey/hakyll-convert
+homepage:            http://github.com/Minoru/hakyll-convert
 license:             BSD3
 license-file:        LICENSE
-author:              Eric Kow <eric.kow@gmail.com>
-maintainer:          Eric Kow <eric.kow@gmail.com>
+author:              Eric Kow <eric.kow@gmail.com>, Alexander Batischev <eual.jp@gmail.com>
+maintainer:          Alexander Batischev <eual.jp@gmail.com>
 -- copyright:           
 category:            Web
 build-type:          Simple
