@@ -4,7 +4,11 @@
 name:                hakyll-convert
 version:             0.1.0.0
 synopsis:            Convert from other blog engines to Hakyll.
--- description:         
+description:         WordPress and Blogger only let one export posts in
+                     a limited number of formats, none of which are supported
+                     by Hakyll. @hakyll-convert@ is created to bridge this gap,
+                     providing a way to turn other platform's datadumps into
+                     a set of files Hakyll understands.
 homepage:            http://github.com/Minoru/hakyll-convert
 license:             BSD3
 license-file:        LICENSE
