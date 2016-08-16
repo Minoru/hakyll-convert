@@ -105,7 +105,7 @@ mainWordPress config = do
         Nothing -> fail $ "Could not understand RSS feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process = savePost config "markdown" . Wordpress.distill
+    process = savePost config "markdown" . Wordpress.distill (extract_comments config)
 
 -- ---------------------------------------------------------------------
 -- To Hakyll (sort of)

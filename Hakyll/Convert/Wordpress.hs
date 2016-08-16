@@ -28,8 +28,8 @@ readPosts f = do
 isPublished :: RSSItem -> Bool
 isPublished i = "publish" `elem` getStatus i
 
-distill :: RSSItem -> DistilledPost
-distill item = DistilledPost
+distill :: Bool -> RSSItem -> DistilledPost
+distill extractComments item = DistilledPost
     { dpTitle = T.pack <$> rssItemTitle item
     , dpBody  = content
     , dpUri   = link
