@@ -28,16 +28,25 @@ readPosts f = do
 isPublished :: RSSItem -> Bool
 isPublished i = "publish" `elem` getStatus i
 
-distill :: RSSItem -> DistilledPost
-distill item = DistilledPost
+distill :: Bool -> RSSItem -> DistilledPost
+distill extractComments item = DistilledPost
     { dpTitle = T.pack <$> rssItemTitle item
-    , dpBody  = content
+    , dpBody  = body
     , dpUri   = link
     , dpTags  = tags
     , dpCategories = categories
     , dpDate  = date
     }
   where
+    body =
+        if extractComments
+        then T.intercalate "\n"
+                           [ content
+                           , ""
+                           , "<h3 id='hakyll-convert-comments-title'>Comments</h3>"
+                           , comments
+                           ]
+        else content
     link = fromMaybe "" (rssItemLink item)
     content = T.pack
             $ unlines (map strContent contentTags)
@@ -54,6 +63,9 @@ distill item = DistilledPost
         , qURI    = Just "http://purl.org/rss/1.0/modules/content/"
         , qPrefix = Just "content"
         }
+    comments = T.intercalate "\n" $ map formatComment $ commentTags
+    commentTags = rssItemOther item >>= findElements commentTag
+    commentTag = wordpressTag "comment"
     --
     date = case parseTime' =<< rssItemPubDate item of
                Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
@@ -65,6 +77,30 @@ distill item = DistilledPost
 -- ---------------------------------------------------------------------
 -- helpers
 -- ---------------------------------------------------------------------
+
+formatComment :: Element -> T.Text
+formatComment commentElement =
+    T.intercalate "\n" [
+          "<div class='hakyll-convert-comment'>"
+         , T.concat [ "<p class='hakyll-convert-comment-date'>"
+                    , "On ", pubdate, ", ", author, " wrote:"
+                    , "</p>" ]
+         , "<div class='hakyll-convert-comment-body'>", comment, "</div>"
+         , "</div>"
+         ]
+    where pubdate = T.pack $ fromMaybe "unknown date" $ findField "comment_date"
+          author = T.pack $ fromMaybe "unknown author" $ findField "comment_author"
+          comment = T.pack $ fromMaybe "" $ findField "comment_content"
+          findField name =
+              strContent <$> findChild (wordpressTag name) commentElement
+
+wordpressTag :: String -> QName
+wordpressTag name =
+    QName
+    { qName = name
+    , qURI = Just "http://wordpress.org/export/1.2/"
+    , qPrefix = Just "wp"
+    }
 
 getStatus :: RSSItem -> [String]
 getStatus item =
