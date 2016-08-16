@@ -63,13 +63,9 @@ distill extractComments item = DistilledPost
         , qURI    = Just "http://purl.org/rss/1.0/modules/content/"
         , qPrefix = Just "content"
         }
-    comments = T.pack $ unlines (map strContent commentTags)
+    comments = T.intercalate "\n" $ map formatComment $ commentTags
     commentTags = rssItemOther item >>= findElements commentTag
-    commentTag = QName
-        { qName = "comment_content"
-        , qURI = Just "http://wordpress.org/export/1.2/"
-        , qPrefix = Just "wp"
-        }
+    commentTag = wordpressTag "comment"
     --
     date = case parseTime' =<< rssItemPubDate item of
                Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
@@ -81,6 +77,30 @@ distill extractComments item = DistilledPost
 -- ---------------------------------------------------------------------
 -- helpers
 -- ---------------------------------------------------------------------
+
+formatComment :: Element -> T.Text
+formatComment commentElement =
+    T.intercalate "\n" [
+          "<div class='hakyll-convert-comment'>"
+         , T.concat [ "<p class='hakyll-convert-comment-date'>"
+                    , "On ", pubdate, ", ", author, " wrote:"
+                    , "</p>" ]
+         , "<div class='hakyll-convert-comment-body'>", comment, "</div>"
+         , "</div>"
+         ]
+    where pubdate = T.pack $ fromMaybe "unknown date" $ findField "comment_date"
+          author = T.pack $ fromMaybe "unknown author" $ findField "comment_author"
+          comment = T.pack $ fromMaybe "" $ findField "comment_content"
+          findField name =
+              strContent <$> findChild (wordpressTag name) commentElement
+
+wordpressTag :: String -> QName
+wordpressTag name =
+    QName
+    { qName = name
+    , qURI = Just "http://wordpress.org/export/1.2/"
+    , qPrefix = Just "wp"
+    }
 
 getStatus :: RSSItem -> [String]
 getStatus item =
