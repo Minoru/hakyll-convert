@@ -61,12 +61,14 @@ fmtOriginalPath post =
   $ chopUri (dpUri post)
   where
     dropTrailingSlash = reverse . dropWhile (== '/') . reverse
-    chopUri (dropPrefix "http://" -> ("",rest)) =
+    dropDomain path =
        -- carelessly assumes we can treat URIs like filepaths
        joinPath $ drop 1 -- drop the domain
-                $ splitPath rest
+                $ splitPath path
+    chopUri (dropPrefix "http://" -> ("",rest)) = dropDomain rest
+    chopUri (dropPrefix "https://" -> ("", rest)) = dropDomain rest
     chopUri u = error $
-       "We've wrongly assumed that blog post URIs start with http://, but we got: " ++ u
+       "We've wrongly assumed that blog post URIs start with http:// or https://, but we got: " ++ u
 
     dropPrefix :: Eq a => [a] -> [a] -> ([a],[a])
     dropPrefix (x:xs) (y:ys) | x == y    = dropPrefix xs ys
