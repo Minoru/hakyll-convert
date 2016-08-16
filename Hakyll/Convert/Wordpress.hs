@@ -31,13 +31,22 @@ isPublished i = "publish" `elem` getStatus i
 distill :: Bool -> RSSItem -> DistilledPost
 distill extractComments item = DistilledPost
     { dpTitle = T.pack <$> rssItemTitle item
-    , dpBody  = content
+    , dpBody  = body
     , dpUri   = link
     , dpTags  = tags
     , dpCategories = categories
     , dpDate  = date
     }
   where
+    body =
+        if extractComments
+        then T.intercalate "\n"
+                           [ content
+                           , ""
+                           , "<h3 id='hakyll-convert-comments-title'>Comments</h3>"
+                           , comments
+                           ]
+        else content
     link = fromMaybe "" (rssItemLink item)
     content = T.pack
             $ unlines (map strContent contentTags)
@@ -53,6 +62,13 @@ distill extractComments item = DistilledPost
         { qName   = "encoded"
         , qURI    = Just "http://purl.org/rss/1.0/modules/content/"
         , qPrefix = Just "content"
+        }
+    comments = T.pack $ unlines (map strContent commentTags)
+    commentTags = rssItemOther item >>= findElements commentTag
+    commentTag = QName
+        { qName = "comment_content"
+        , qURI = Just "http://wordpress.org/export/1.2/"
+        , qPrefix = Just "wp"
         }
     --
     date = case parseTime' =<< rssItemPubDate item of

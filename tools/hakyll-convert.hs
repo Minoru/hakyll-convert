@@ -53,7 +53,7 @@ parameters p = modes
         , outputDir        = def &= argPos 1 &= typDir
         , output_format    = "%o" &= help outputFormatHelp
         , format           = Blogger &= help "blogger or wordpress"
-        , extract_comments = False &= help "Extract comments (Blogger only)"
+        , extract_comments = False &= help "Extract comments"
         } &= help "Save blog posts Blogger feed into individual posts"
     ] &= program (takeFileName p)
 
