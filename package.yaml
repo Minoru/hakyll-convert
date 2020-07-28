@@ -28,7 +28,7 @@ dependencies:
   - xml
 
 library:
-  source-dirs: .
+  source-dirs: src
   exposed-modules:
     - Hakyll.Convert.Blogger
     - Hakyll.Convert.Common
@@ -37,6 +37,6 @@ library:
 
 executable:
   main: hakyll-convert.hs
-  source-dirs: tools
+  source-dirs: app
   dependencies:
     - hakyll-convert
