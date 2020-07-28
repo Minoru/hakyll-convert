@@ -39,6 +39,7 @@ data FullPost = FullPost
     , fpComments :: [Entry]
     , fpUri      :: String
     }
+  deriving (Show)
 
 -- | An entry is assumed to be either a post, or a comment.
 --   If it's a post, it should be associated with the URI

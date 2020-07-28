@@ -40,3 +40,12 @@ executable:
   source-dirs: app
   dependencies:
     - hakyll-convert
+
+tests:
+  golden:
+    main: Golden.hs
+    source-dirs: test
+    dependencies:
+      - hakyll-convert
+      - tasty
+      - tasty-golden
