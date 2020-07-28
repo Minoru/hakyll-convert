@@ -1,0 +1,42 @@
+name: hakyll-convert
+version: 0.2.0.0
+synopsis: Convert from other blog engines to Hakyll.
+description: WordPress and Blogger only let one export posts in
+             a limited number of formats, none of which are supported
+             by Hakyll. @hakyll-convert@ is created to bridge this gap,
+             providing a way to turn other platform's datadumps into
+             a set of files Hakyll understands.
+github: Minoru/hakyll-convert
+license: BSD3
+license-file: LICENSE
+author: Eric Kow <eric.kow@gmail.com>, Alexander Batischev <eual.jp@gmail.com>
+maintainer: Alexander Batischev <eual.jp@gmail.com>
+
+dependencies:
+  - base < 5
+  - binary
+  - bytestring
+  - cmdargs
+  - containers
+  - data-default
+  - directory
+  - feed
+  - filepath
+  - hakyll
+  - text
+  - time
+  - xml
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Hakyll.Convert.Blogger
+    - Hakyll.Convert.Common
+    - Hakyll.Convert.Wordpress
+    - Hakyll.Convert.OutputFormat
+
+executable:
+  main: hakyll-convert.hs
+  source-dirs: app
+  dependencies:
+    - hakyll-convert
