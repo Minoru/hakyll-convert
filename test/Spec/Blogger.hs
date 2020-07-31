@@ -336,6 +336,7 @@ turnsIncorrectDatesIntoEpochStart =
         , "2020-07-30 00:01"
         , "2020-07-30T00:01"
         , "2020-07-30T00:01Z"
+        , "Sun, 31st July, 2020"
         ]
     ]
   where

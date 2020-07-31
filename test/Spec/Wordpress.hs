@@ -27,7 +27,7 @@ tests = testGroup "Wordpress.distill"
   , canSkipComments
   , canExtractComments
   , usesTheFirstCommentAuthorTag
-  --, turnsIncorrectDatesIntoEpochStart
+  , turnsIncorrectDatesIntoEpochStart
   , parsesDates
   , extractsPostTags
   , extractsPostCategories
@@ -440,7 +440,6 @@ usesTheFirstCommentAuthorTag =
     \</div>\n\
     \</div>"
 
-{-
 turnsIncorrectDatesIntoEpochStart :: TestTree
 turnsIncorrectDatesIntoEpochStart =
   testGroup
@@ -453,25 +452,16 @@ turnsIncorrectDatesIntoEpochStart =
         , "2020-07-30 00:01"
         , "2020-07-30T00:01"
         , "2020-07-30T00:01Z"
+        , "Sun, 31st July, 2020"
         ]
     ]
   where
-  createInput date = FullPost {
-      fpPost     = createEntry date
-    , fpComments = []
-    , fpUri      = "https://example.com/feed"
-    }
-  createEntry date =
-    (Atom.nullEntry
-      "https://example.com/entry"
-      (Atom.TextString "First post")
-      date)
-    { Atom.entryContent = Just (Atom.HTMLContent "")
-    , Atom.entryPublished = Just date
-    }
+  createInput date =
+    (RSS.nullItem "Testing...")
+      { RSS.rssItemPubDate = Just date
+      }
 
   expected = fromGregorian 1970 1 1 0 0 0
--}
 
 parsesDates :: TestTree
 parsesDates =
