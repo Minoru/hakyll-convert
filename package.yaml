@@ -49,3 +49,13 @@ tests:
       - hakyll-convert
       - tasty
       - tasty-golden
+
+  spec:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - datetime
+      - hakyll-convert
+      - tasty
+      - tasty-expected-failure
+      - tasty-hunit
