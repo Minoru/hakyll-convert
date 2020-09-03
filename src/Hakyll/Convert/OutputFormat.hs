@@ -33,6 +33,7 @@ formatPath format post = helper [] format >>= return.T.concat
               then let formatter = acceptableFormats M.! ch
                    in helper ((formatter post):acc) rest2
               else Nothing
+          Nothing -> Nothing
       Just (ch,  rest) -> helper ((T.singleton ch):acc) rest
       Nothing          -> Just $ reverse acc
 

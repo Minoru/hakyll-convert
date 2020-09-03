@@ -68,7 +68,7 @@ distill extractComments item = DistilledPost
     commentTag = wordpressTag "comment"
     --
     date = case parseTime' =<< rssItemPubDate item of
-               Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
+               Nothing -> fromJust $ parseTime' "Thu, 01 Jan 1970 00:00:00 UTC"
                Just  d -> d
     parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
         [ rfc822DateFormat
