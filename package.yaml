@@ -59,3 +59,4 @@ tests:
       - tasty
       - tasty-expected-failure
       - tasty-hunit
+      - tasty-quickcheck

@@ -4,9 +4,11 @@ module Spec.OutputFormat (tests) where
 
 import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.HUnit
+import Test.Tasty.QuickCheck
 
 import Data.DateTime (fromGregorian)
 import Data.Default
+import Data.Maybe (isJust)
 import qualified Data.Text as T
 
 import Hakyll.Convert.OutputFormat
@@ -14,9 +16,30 @@ import Hakyll.Convert.Common (DistilledPost(..))
 
 tests :: TestTree
 tests = testGroup "OutputFormat"
-  [ formatPathTests
+  [ validOutputFormatTests
+  , formatPathTests
   ]
 
+validOutputFormatTests :: TestTree
+validOutputFormatTests = testGroup "`validOutputFormat`"
+  [ falseOnEmptyFormat
+  , synchronyWithFormatPath
+  ]
+  where
+  falseOnEmptyFormat =
+    testCase
+      "returns False if format string is empty"
+      (validOutputFormat "" @?= False)
+
+  synchronyWithFormatPath =
+    testProperty
+      "returns False if `formatPath` returns `Nothing`, otherwise True"
+      (\format ->
+          let
+              format' = T.pack format
+              result = validOutputFormat format'
+              formatPathResult = isJust (formatPath format' def)
+          in not (null format) ==> (result && formatPathResult) || (not result && not formatPathResult))
 
 formatPathTests :: TestTree
 formatPathTests = testGroup "`formatPath`"
@@ -120,5 +143,7 @@ formatPathTests = testGroup "`formatPath`"
     helper format expected = testCase format (formatPath (T.pack format) post @?= Just expected)
 
   abortsProcessingOnUnknownFormat =
-    testCase "returns Nothing upon encountering an unsupported format"
-    (formatPath "%H%M%S-%x.html" def @?= Nothing)
+    testGroup "returns Nothing upon encountering an unsupported format"
+    [ testCase "unknown format %x" (formatPath "%H%M%S-%x.html" def @?= Nothing)
+    , testCase "no format specifier after percent sign" (formatPath "%H%M%" def @?= Nothing)
+    ]
