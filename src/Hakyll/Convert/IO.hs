@@ -1,0 +1,46 @@
+{-# LANGUAGE OverloadedStrings  #-}
+
+module Hakyll.Convert.IO where
+
+import           Data.Maybe                   (fromJust)
+import           Data.Monoid                  ((<>))
+import           Data.Time.Format             (formatTime, defaultTimeLocale)
+import           System.Directory             (createDirectoryIfMissing)
+import           System.FilePath              (takeFileName, takeDirectory, (</>), (<.>))
+import qualified Data.ByteString              as B
+import qualified Data.Text                    as T
+import qualified Data.Text.Encoding           as T
+
+import           Hakyll.Convert.Common        (DistilledPost(..))
+import           Hakyll.Convert.OutputFormat  (formatPath)
+
+-- | Save a post along with its comments in a format that Hakyll understands
+savePost :: FilePath -> T.Text -> String -> DistilledPost -> IO String
+savePost odir oformat ext post = do
+    createDirectoryIfMissing True (takeDirectory fname)
+    B.writeFile fname . T.encodeUtf8 $ T.unlines
+        [ "---"
+        , metadata "title"     (formatTitle (dpTitle post))
+        , metadata "published" (formatDate  (dpDate  post))
+        , metadata "categories" (formatTags (dpCategories post))
+        , metadata "tags"      (formatTags  (dpTags  post))
+        , "---"
+        , ""
+        , formatBody (dpBody post)
+        ]
+
+    return fname
+  where
+    metadata k v = k <> ": " <> v
+    --
+    fname    = odir </> postPath <.> ext
+    postPath = T.unpack $ fromJust $ formatPath oformat post
+    --
+    formatTitle (Just t) = t
+    formatTitle Nothing  =
+        "untitled (" <> T.unwords firstFewWords <> "…)"
+      where
+        firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
+    formatDate  = T.pack . formatTime defaultTimeLocale "%FT%TZ" --for hakyll
+    formatTags  = T.intercalate ","
+    formatBody  = id

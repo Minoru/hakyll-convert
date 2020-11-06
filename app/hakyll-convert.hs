@@ -8,13 +8,11 @@ import qualified Data.ByteString        as B
 import           Data.Char
 import           Data.Function
 import           Data.List
-import           Data.List
 import           Data.Maybe
 import           Data.Monoid
 import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
 import           Data.Time.Format             (formatTime, defaultTimeLocale)
-import           System.Directory
 import           System.Environment
 import           System.FilePath
 
@@ -28,6 +26,7 @@ import           Text.Atom.Feed.Import
 import           Text.XML.Light
 
 import           Hakyll.Convert.Common
+import           Hakyll.Convert.IO
 import           Hakyll.Convert.OutputFormat
 import qualified Hakyll.Convert.Blogger   as Blogger
 import qualified Hakyll.Convert.Wordpress as Wordpress
@@ -96,7 +95,10 @@ mainBlogger config = do
         Nothing -> fail $ "Could not understand Atom feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process = savePost config "html" . Blogger.distill (extract_comments config)
+    process feed = do
+      let distilled = Blogger.distill (extract_comments config) feed
+      fname <- savePost (outputDir config) (output_format config) "html" distilled
+      putStrLn fname
 
 mainWordPress :: Config -> IO ()
 mainWordPress config = do
@@ -105,40 +107,7 @@ mainWordPress config = do
         Nothing -> fail $ "Could not understand RSS feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process = savePost config "markdown" . Wordpress.distill (extract_comments config)
-
--- ---------------------------------------------------------------------
--- To Hakyll (sort of)
--- Saving feed in bite-sized pieces
--- ---------------------------------------------------------------------
-
--- | Save a post along with its comments as a mini atom feed
-savePost :: Config -> String -> DistilledPost -> IO ()
-savePost cfg ext post = do
-    putStrLn fname
-    createDirectoryIfMissing True (takeDirectory fname)
-    B.writeFile fname . T.encodeUtf8 $ T.unlines
-        [ "---"
-        , metadata "title"     (formatTitle (dpTitle post))
-        , metadata "published" (formatDate  (dpDate  post))
-        , metadata "categories" (formatTags (dpCategories post))
-        , metadata "tags"      (formatTags  (dpTags  post))
-        , "---"
-        , ""
-        , formatBody (dpBody post)
-        ]
-  where
-    metadata k v = k <> ": " <> v
-    odir  = outputDir cfg
-    --
-    fname    = odir </> postPath <.> ext
-    postPath = T.unpack $ fromJust $ formatPath (output_format cfg) post
-    --
-    formatTitle (Just t) = t
-    formatTitle Nothing  =
-        "untitled (" <> T.unwords firstFewWords <> "…)"
-      where
-        firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
-    formatDate  = T.pack . formatTime defaultTimeLocale "%FT%TZ" --for hakyll
-    formatTags  = T.intercalate ","
-    formatBody  = id
+    process feed = do
+      let distilled = Wordpress.distill (extract_comments config) feed
+      fname <- savePost (outputDir config) (output_format config) "markdown" distilled
+      putStrLn fname

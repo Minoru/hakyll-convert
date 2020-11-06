@@ -32,8 +32,9 @@ library:
   exposed-modules:
     - Hakyll.Convert.Blogger
     - Hakyll.Convert.Common
-    - Hakyll.Convert.Wordpress
+    - Hakyll.Convert.IO
     - Hakyll.Convert.OutputFormat
+    - Hakyll.Convert.Wordpress
 
 executable:
   main: hakyll-convert.hs
@@ -46,9 +47,11 @@ tests:
     main: Golden.hs
     source-dirs: test
     dependencies:
+      - datetime
       - hakyll-convert
       - tasty
       - tasty-golden
+      - temporary
 
   spec:
     main: Spec.hs
@@ -60,3 +63,4 @@ tests:
       - tasty-expected-failure
       - tasty-hunit
       - tasty-quickcheck
+      - temporary
