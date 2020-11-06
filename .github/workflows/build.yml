@@ -1,0 +1,21 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build with Stack
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          key: ${{ hashFiles('package.yaml', 'stack.yaml', 'stack.yaml.lock') }}
+          path:
+            ~/.stack
+
+      - name: Build
+        run: stack test --haddock
