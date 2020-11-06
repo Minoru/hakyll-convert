@@ -32,8 +32,9 @@ library:
   exposed-modules:
     - Hakyll.Convert.Blogger
     - Hakyll.Convert.Common
-    - Hakyll.Convert.Wordpress
+    - Hakyll.Convert.IO
     - Hakyll.Convert.OutputFormat
+    - Hakyll.Convert.Wordpress
 
 executable:
   main: hakyll-convert.hs
