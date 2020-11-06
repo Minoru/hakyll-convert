@@ -36,7 +36,7 @@ extractsPostUri :: TestTree
 extractsPostUri =
   testGroup
     "extracts post's URI"
-    [ testCase uri (dpUri (distill False (createInput uri)) @?= uri)
+    [ testCase (T.unpack uri) (dpUri (distill False (createInput uri)) @?= uri)
     | uri <-
         [ "https://example.com/testing-post-uris"
         , "http://www.example.com/~joe/posts.atom"

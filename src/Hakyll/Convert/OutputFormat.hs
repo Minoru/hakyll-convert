@@ -59,7 +59,7 @@ fmtOriginalPath post =
     T.pack
   . dropTrailingSlash
   . dropExtensions
-  $ chopUri (dpUri post)
+  $ chopUri $ T.unpack (dpUri post)
   where
     dropTrailingSlash = reverse . dropWhile (== '/') . reverse
     dropDomain path =

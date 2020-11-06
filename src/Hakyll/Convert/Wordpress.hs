@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+
 module Hakyll.Convert.Wordpress
     (readPosts, distill)
   where
@@ -47,7 +48,7 @@ distill extractComments item = DistilledPost
                            , comments
                            ]
         else content
-    link = fromMaybe "" (rssItemLink item)
+    link = T.pack $ fromMaybe "" (rssItemLink item)
     content = T.pack
             $ unlines (map strContent contentTags)
     categories = rssCategoriesOfType "category"
@@ -94,17 +95,17 @@ formatComment commentElement =
           findField name =
               strContent <$> findChild (wordpressTag name) commentElement
 
-wordpressTag :: String -> QName
+wordpressTag :: T.Text -> QName
 wordpressTag name =
     QName
-    { qName = name
+    { qName = T.unpack name
     , qURI = Just "http://wordpress.org/export/1.2/"
     , qPrefix = Just "wp"
     }
 
-getStatus :: RSSItem -> [String]
+getStatus :: RSSItem -> [T.Text]
 getStatus item =
-    map strContent statusTags
+    map (T.pack . strContent) statusTags
   where
     statusTags = concatMap (findElements (wpName "status"))
         (rssItemOther item)

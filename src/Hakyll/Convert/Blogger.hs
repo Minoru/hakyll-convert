@@ -1,6 +1,7 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
 {-# LANGUAGE FlexibleContexts   #-}
+
 module Hakyll.Convert.Blogger
     (FullPost(..), readPosts, distill)
   where
@@ -34,7 +35,7 @@ import           Hakyll.Convert.Common
 data FullPost = FullPost
     { fpPost     :: Entry
     , fpComments :: [Entry]
-    , fpUri      :: String
+    , fpUri      :: T.Text
     }
   deriving (Show)
 
@@ -44,12 +45,12 @@ data FullPost = FullPost
 --   If it's a comment, it should be the URI for the corresponding
 --   post.
 data BloggerEntry =
-    Post    { beUri_ :: String, beEntry :: Entry }
-  | Comment { beUri_ :: String, beEntry :: Entry }
+    Post    { beUri_ :: T.Text, beEntry :: Entry }
+  | Comment { beUri_ :: T.Text, beEntry :: Entry }
   | Orphan  { beEntry :: Entry }
   deriving (Show)
 
-beUri :: BloggerEntry -> Maybe String
+beUri :: BloggerEntry -> Maybe T.Text
 beUri (Orphan _)    = Nothing
 beUri (Post u _)    = Just u
 beUri (Comment u _) = Just u
@@ -126,10 +127,10 @@ identifyEntry :: Entry -> BloggerEntry
 identifyEntry e =
     if isPost e
         then case getLink "self" `mplus` getLink "alternate" of
-                 Just l  -> Post (postUrl l) e
+                 Just l  -> Post (T.pack $ postUrl l) e
                  Nothing -> entryError e oopsSelf
         else case getLink "alternate" of
-                 Just l  -> Comment (postUrl l) e
+                 Just l  -> Comment (T.pack $ postUrl l) e
                  Nothing -> Orphan e
   where
     isPost  = any (isBloggerCategoryOfType "post") . entryCategories
@@ -146,12 +147,12 @@ isBloggerCategory :: Category -> Bool
 isBloggerCategory = (== Just "http://schemas.google.com/g/2005#kind")
                   . catScheme
 
-isBloggerCategoryOfType :: String -- ^ \"comment\", \"post\", etc
+isBloggerCategoryOfType :: T.Text -- ^ \"comment\", \"post\", etc
                         -> Category
                         -> Bool
 isBloggerCategoryOfType ty c =
     isBloggerCategory c &&
-    catTerm c == "http://schemas.google.com/blogger/2008/kind#" ++ ty
+    catTerm c == T.unpack (T.append "http://schemas.google.com/blogger/2008/kind#" ty)
 
 -- ---------------------------------------------------------------------
 --

@@ -12,7 +12,7 @@ import           Data.Time.Clock              (UTCTime)
 import           Data.Time.Clock.POSIX        (posixSecondsToUTCTime)
 
 data DistilledPost = DistilledPost
-    { dpUri   :: String
+    { dpUri   :: T.Text
     , dpBody  :: Text
     , dpTitle :: Maybe Text
     , dpTags  :: [Text]

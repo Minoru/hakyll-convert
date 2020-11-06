@@ -37,7 +37,7 @@ extractsPostUri :: TestTree
 extractsPostUri =
   testGroup
     "extracts post's item link"
-    [ testCase uri (dpUri (distill False (createInput uri)) @?= uri)
+    [ testCase (T.unpack uri) (dpUri (distill False (createInput uri)) @?= uri)
     | uri <-
         [ "https://example.com/testing-post-uris"
         , "http://www.example.com/~joe/posts.atom"
@@ -45,7 +45,7 @@ extractsPostUri =
     ]
   where
   createInput uri = (RSS.nullItem "First post")
-    { RSS.rssItemLink = Just uri
+    { RSS.rssItemLink = Just $ T.unpack uri
     }
 
 contentTag :: XML.QName
