@@ -9,7 +9,7 @@ import Golden.GoldenTestHelpers
 
 goldenTests :: TestTree
 goldenTests =
-  testGroup "Blogger"
+  testGroup "Blogger.readPosts"
     [ blogger_00
     ]
 

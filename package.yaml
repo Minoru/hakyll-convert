@@ -47,9 +47,11 @@ tests:
     main: Golden.hs
     source-dirs: test
     dependencies:
+      - datetime
       - hakyll-convert
       - tasty
       - tasty-golden
+      - temporary
 
   spec:
     main: Spec.hs
@@ -61,3 +63,4 @@ tests:
       - tasty-expected-failure
       - tasty-hunit
       - tasty-quickcheck
+      - temporary

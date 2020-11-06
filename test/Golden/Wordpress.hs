@@ -9,7 +9,7 @@ import Golden.GoldenTestHelpers
 
 goldenTests :: TestTree
 goldenTests =
-  testGroup "Wordpress"
+  testGroup "Wordpress.readPosts"
     [ wordpress_00
     ]
 
