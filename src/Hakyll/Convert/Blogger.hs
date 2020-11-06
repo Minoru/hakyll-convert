@@ -23,9 +23,6 @@ import qualified Data.Text.Encoding           as T
 import           Data.Time                    (UTCTime)
 import           Data.Time.Format             (parseTimeM, defaultTimeLocale)
 
-import           Hakyll.Core.Compiler
-import           Hakyll.Core.Item
-import           Hakyll.Web.Template.Context
 import           Text.Atom.Feed
 import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import

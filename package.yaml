@@ -22,7 +22,6 @@ dependencies:
   - directory
   - feed
   - filepath
-  - hakyll
   - text
   - time
   - xml
