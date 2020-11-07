@@ -5255,6 +5255,26 @@ html[dir=rtl] .sidebar-container {
     <thr:total>0</thr:total>
   </entry>
   <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.post-8071006425242346850</id>
+    <published>2020-11-06T12:38:00.000-08:00</published>
+    <updated>2020-11-06T12:38:06.035-08:00</updated>
+    <app:control xmlns:app="http://purl.org/atom/app#">
+      <app:draft>yes</app:draft>
+    </app:control>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#post"/>
+    <title type="text">Just a draft for now</title>
+    <content type="html">This is a draft. It shouldn't appear in the output of hakyll-convert, since drafts are skipped.</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/8071006425242346850"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/8071006425242346850"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+    <thr:total>0</thr:total>
+  </entry>
+  <entry>
     <id>tag:blogger.com,1999:blog-5162495313991119940.post-4418218280178244067</id>
     <published>2017-09-02T14:45:23.302-07:00</published>
     <updated>2017-09-02T14:45:23.302-07:00</updated>
