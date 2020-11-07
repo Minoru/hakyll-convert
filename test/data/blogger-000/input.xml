@@ -1,4 +1,27 @@
-<?xml version='1.0' encoding='UTF-8'?><?xml-stylesheet href="https://www.blogger.com/styles/atom.css" type="text/css"?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:gd='http://schemas.google.com/g/2005' xmlns:thr='http://purl.org/syndication/thread/1.0' xmlns:georss='http://www.georss.org/georss'><id>tag:blogger.com,1999:blog-5162495313991119940.archive</id><updated>2017-09-02T14:46:05.099-07:00</updated><title type='text'>Testing hakyll-convert</title><link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/archive'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/archive'/><link rel='http://schemas.google.com/g/2005#post' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/archive'/><link rel='alternate' type='text/html' href='http://testinghakyllconvert.blogspot.com/'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author><generator version='7.00' uri='https://www.blogger.com'>Blogger</generator><entry><id>tag:blogger.com,1999:blog-5162495313991119940.layout</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#template'/><title type='text'>Шаблон: Testing hakyll-convert</title><content type='text'>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://www.blogger.com/styles/atom.css" type="text/css"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:gd="http://schemas.google.com/g/2005" xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:georss="http://www.georss.org/georss">
+  <id>tag:blogger.com,1999:blog-5162495313991119940.archive</id>
+  <updated>2017-09-02T14:46:05.099-07:00</updated>
+  <title type="text">Testing hakyll-convert</title>
+  <link rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/archive"/>
+  <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/archive"/>
+  <link rel="http://schemas.google.com/g/2005#post" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/archive"/>
+  <link rel="alternate" type="text/html" href="http://testinghakyllconvert.blogspot.com/"/>
+  <author>
+    <name>Minoru</name>
+    <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+    <email>noreply@blogger.com</email>
+    <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+  </author>
+  <generator version="7.00" uri="https://www.blogger.com">Blogger</generator>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.layout</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#template"/>
+    <title type="text">Шаблон: Testing hakyll-convert</title>
+    <content type="text">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='fancy.xml' b:templateVersion='1.1.1' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'&gt;
   &lt;head&gt;
@@ -4284,4 +4307,971 @@ html[dir=rtl] .sidebar-container {
     &lt;/aside&gt;
     &lt;b:template-script async='true' name='fancy' version='1.0.0'/&gt;
   &lt;/body&gt;
-&lt;/html&gt;</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/template/default'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/template/default'/><link rel='alternate' type='text/html' href='http://testinghakyllconvert.blogspot.com/'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PUBLISHING_MODE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Тип публикации, использованный для данного блога.</title><content type='text'>PUBLISH_MODE_BLOGSPOT</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PUBLISHING_MODE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PUBLISHING_MODE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ADMIN_PERMISSION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Список сообщений администраторов по данному блогу.</title><content type='text'>eual.jp@gmail.com</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADMIN_PERMISSION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADMIN_PERMISSION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ADULT_CONTENT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, содержит ли этот блог содержание только для взрослых</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADULT_CONTENT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADULT_CONTENT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ALTERNATE_JSRENDER_ALLOWED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Разрешена ли альтернативная обработка JavaScript</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ALTERNATE_JSRENDER_ALLOWED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ALTERNATE_JSRENDER_ALLOWED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ANALYTICS_ACCOUNT_NUMBER</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Номер аккаунта Google Analytics для блога</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ANALYTICS_ACCOUNT_NUMBER'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ANALYTICS_ACCOUNT_NUMBER'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ARCHIVE_DATE_FORMAT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Номер формата даты в индексе архива</title><content type='text'>9</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_DATE_FORMAT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_DATE_FORMAT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ARCHIVE_FREQUENCY</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Частота архивирования блога</title><content type='text'>MONTHLY</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_FREQUENCY'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_FREQUENCY'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_AUTHOR_PERMISSION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Список адресов электронной почты авторов, у которых есть разрешение на публикацию.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_AUTHOR_PERMISSION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_AUTHOR_PERMISSION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_BACKLINKS_ALLOWED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Отображение в блоге обратных ссылок на комментарии</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BACKLINKS_ALLOWED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BACKLINKS_ALLOWED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_BY_POST_ARCHIVING</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Предоставление страницы архива для каждого сообщения</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BY_POST_ARCHIVING'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BY_POST_ARCHIVING'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_ACCESS</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Кто может оставлять комментарии</title><content type='text'>REGISTERED</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_ACCESS'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_ACCESS'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_CAPTCHA</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Обязательная проверка Captcha для авторов комментариев</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_CAPTCHA'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_CAPTCHA'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_EMAIL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Список адресов электронной почты, на которые будут отправляться уведомления о новых комментариях</title><content type='text'>eual.jp@gmail.com</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_EMAIL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_EMAIL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_FEED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Тип канала, предоставляемого для комментариев блога</title><content type='text'>FULL</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FEED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FEED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_FORM_LOCATION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Расположение формы комментария в блоге</title><content type='text'>EMBEDDED_IFRAME</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FORM_LOCATION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FORM_LOCATION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MESSAGE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Сообщение комментария в блоге</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MESSAGE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MESSAGE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Включение модерации комментариев</title><content type='text'>DISABLED</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION_DELAY</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Количество дней, по истечении которых новые комментарии подвергаются модерации</title><content type='text'>14</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_DELAY'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_DELAY'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION_EMAIL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Адрес электронной почты для отправки уведомлений о новых комментариях, нуждающихся в проверке</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_EMAIL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_EMAIL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_PROFILE_IMAGES</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Отображение картинок профиля в комментариях</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_PROFILE_IMAGES'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_PROFILE_IMAGES'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENTS_ALLOWED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, показывать ли комментарии</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_ALLOWED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_ALLOWED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENTS_TIME_STAMP_FORMAT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Номер формата времени публикации комментария</title><content type='text'>29</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_TIME_STAMP_FORMAT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_TIME_STAMP_FORMAT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CONVERT_LINE_BREAKS</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, нужно ли преобразовывать разрывы строк в &lt;br /&gt; теги в редакторе сообщений</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CONVERT_LINE_BREAKS'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CONVERT_LINE_BREAKS'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_PAGE_NOT_FOUND</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Содержание, отображаемое в тех случаях, когда запись или страница не найдены.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_PAGE_NOT_FOUND'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_PAGE_NOT_FOUND'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_ROBOTS_TXT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Файл robots.txt предоставляется поисковым системам.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_ROBOTS_TXT_ENABLED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Предоставляет ли этот блог поисковым системам файл robots.txt?</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT_ENABLED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT_ENABLED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DATE_FORMAT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Номер формата заголовка даты</title><content type='text'>26</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DATE_FORMAT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DATE_FORMAT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DEFAULT_BACKLINKS_MODE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Режим обратных ссылок для сообщений по умолчанию</title><content type='text'>DEFAULT_HAVE_BACKLINKS</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_BACKLINKS_MODE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_BACKLINKS_MODE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DEFAULT_COMMENTS_MODE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Режим комментариев по умолчанию для сообщений</title><content type='text'>DEFAULT_HAVE_COMMENTS</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_COMMENTS_MODE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_COMMENTS_MODE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DESCRIPTION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Описание блога</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DESCRIPTION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DESCRIPTION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_EMAIL_POST_LINKS</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, показывать ли пользователям ссылку для отправки сообщений по электронной почте</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_EMAIL_POST_LINKS'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_EMAIL_POST_LINKS'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_FEED_REDIRECT_URL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>URL для перенаправления запросов на канал сообщений</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FEED_REDIRECT_URL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FEED_REDIRECT_URL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_FLOAT_ALIGNMENT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет включение плавающего выравнивания в блоге</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FLOAT_ALIGNMENT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FLOAT_ALIGNMENT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_LOCALE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Язык для данного блога</title><content type='text'>ru</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_LOCALE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_LOCALE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_M2B_WHITELIST_EMAIL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Список адресов электронной почты пользователей, которые могут публиковать сообщения в блоге по электронной почте.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_M2B_WHITELIST_EMAIL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_M2B_WHITELIST_EMAIL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_MAX_NUM</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Максимальное количество единиц для показа на главной странице"</title><content type='text'>11</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_NUM'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_NUM'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_MAX_UNIT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Блок для отображения на главной странице</title><content type='text'>POSTS</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_UNIT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_UNIT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_META_DESCRIPTION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Метаописание блога используется в поисковых системах.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_META_DESCRIPTION_ENABLED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>В этом блоге используется метаописание.</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION_ENABLED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION_ENABLED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_NAME</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Название блога</title><content type='text'>Testing hakyll-convert</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_NAME'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_NAME'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PER_POST_FEED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Тип канала, предоставляемого для комментариев к отдельным сообщениям</title><content type='text'>FULL</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PER_POST_FEED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PER_POST_FEED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_FEED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Тип канала, предоставляемого для сообщений блога</title><content type='text'>FULL</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_FEED_FOOTER</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Нижний колонтитул, добавляемый в конце каждой записи канала сообщений</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED_FOOTER'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED_FOOTER'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_TEMPLATE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Шаблон для сообщений блога</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_TEMPLATE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_TEMPLATE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PROMOTED</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, возможно ли рекламирование данного блога в Blogger</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PROMOTED'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PROMOTED'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_QUICK_EDITING</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, включено ли быстрое редактирование</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_QUICK_EDITING'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_QUICK_EDITING'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_READ_ACCESS_MODE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Тип доступа для читателей блога.</title><content type='text'>PRIVATE</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READ_ACCESS_MODE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READ_ACCESS_MODE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_READER_PERMISSION</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Список адресов электронной почты пользователей, имеющих право на чтение этого блога.</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READER_PERMISSION'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READER_PERMISSION'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SEARCHABLE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет индексирование данного блога поисковыми машинами</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEARCHABLE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEARCHABLE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SEND_EMAIL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Разделенный запятыми список адресов электронной почты, на которые будут отправляться новые сообщения блогов</title><content type='text'></content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEND_EMAIL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEND_EMAIL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SHOW_TITLE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, показывать ли поле заголовка</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_TITLE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_TITLE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SHOW_URL</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Определяет, показывать ли поле связанной ссылки у составителя сообщения</title><content type='text'>false</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_URL'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_URL'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SUBDOMAIN</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Субдомен BlogSpot, в котором будет опубликован ваш блог</title><content type='text'>testinghakyllconvert</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SUBDOMAIN'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SUBDOMAIN'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_TIME_STAMP_FORMAT</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Число формата отметки времени</title><content type='text'>15</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_STAMP_FORMAT'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_STAMP_FORMAT'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_TIME_ZONE</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Временная зона для этого блога</title><content type='text'>America/Los_Angeles</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_ZONE'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_ZONE'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_USE_LIGHTBOX</id><published>2017-09-02T14:39:51.165-07:00</published><updated>2017-09-02T14:46:05.099-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#settings'/><title type='text'>Показывать изображения в Lightbox при нажатии</title><content type='text'>true</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_USE_LIGHTBOX'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_USE_LIGHTBOX'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.post-7643416819140719600</id><published>2017-09-02T14:44:00.002-07:00</published><updated>2017-09-02T14:44:31.203-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#post'/><title type='text'></title><content type='html'>&lt;a href="https://github.com/Minoru/hakyll-convert"&gt;Hakyll-convert&lt;/a&gt; provides a library and utility for importing blogs from a variety of engines (currently, Blogger and WordPress) to the &lt;a href="http://jaspervdj.be/hakyll/"&gt;Hakyll&lt;/a&gt; static site generator.&lt;br /&gt;&lt;br /&gt;We aim to: &lt;br /&gt;&lt;ul&gt;&lt;li&gt;avoid converting your content between formats (it usually comes in HTML and should stay as such without passing through filters)&lt;/li&gt;&lt;li&gt;allow for the possibility of &lt;a href="http://www.w3.org/Provider/Style/URI.html"&gt;Cool URIs&lt;/a&gt; by keeping relative page names the same as on your old blog (this only works if you use your own domain for your hosted site). If you don’t agree with us on that point, use &lt;code&gt;--output-format&lt;/code&gt; flag to specify your own output filename format.&lt;/li&gt;&lt;/ul&gt;This blog supports hakyll-convert by proving a set of test posts that can be exported and then used as a testing input for the program. </content><link rel='replies' type='application/atom+xml' href='https://testinghakyllconvert.blogspot.com/feeds/7643416819140719600/comments/default' title='Комментарии к сообщению'/><link rel='replies' type='text/html' href='http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html#comment-form' title='Комментарии: 1'/><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600'/><link rel='alternate' type='text/html' href='http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html' title=''/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author><thr:total>1</thr:total></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.post-96427537133708969</id><published>2017-09-02T14:41:00.001-07:00</published><updated>2017-09-02T14:41:34.728-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#post'/><title type='text'>My first testing post</title><content type='html'>This is the first ever post on this blog.</content><link rel='replies' type='application/atom+xml' href='https://testinghakyllconvert.blogspot.com/feeds/96427537133708969/comments/default' title='Комментарии к сообщению'/><link rel='replies' type='text/html' href='http://testinghakyllconvert.blogspot.com/2017/09/my-first-testing-post.html#comment-form' title='Комментарии: 0'/><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/posts/default/96427537133708969'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/posts/default/96427537133708969'/><link rel='alternate' type='text/html' href='http://testinghakyllconvert.blogspot.com/2017/09/my-first-testing-post.html' title='My first testing post'/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author><thr:total>0</thr:total></entry><entry><id>tag:blogger.com,1999:blog-5162495313991119940.post-4418218280178244067</id><published>2017-09-02T14:45:23.302-07:00</published><updated>2017-09-02T14:45:23.302-07:00</updated><category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/blogger/2008/kind#comment'/><title type='text'>This is an example comment.</title><content type='html'>This is an example comment.</content><link rel='edit' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/7643416819140719600/comments/default/4418218280178244067'/><link rel='self' type='application/atom+xml' href='https://www.blogger.com/feeds/5162495313991119940/7643416819140719600/comments/default/4418218280178244067'/><link rel='alternate' type='text/html' href='http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html?showComment=1504388723302#c4418218280178244067' title=''/><author><name>Minoru</name><uri>https://www.blogger.com/profile/15979236009981641914</uri><email>noreply@blogger.com</email><gd:image rel='http://schemas.google.com/g/2005#thumbnail' width='32' height='32' src='//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg'/></author><thr:in-reply-to href='http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html' ref='tag:blogger.com,1999:blog-5162495313991119940.post-7643416819140719600' source='https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600' type='text/html'/><gd:extendedProperty name='blogger.itemClass' value='pid-1244904998'/><gd:extendedProperty name='blogger.displayTime' value='2 сентября 2017 г., 14:45'/></entry></feed>
+&lt;/html&gt;</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/template/default"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/template/default"/>
+    <link rel="alternate" type="text/html" href="http://testinghakyllconvert.blogspot.com/"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PUBLISHING_MODE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Тип публикации, использованный для данного блога.</title>
+    <content type="text">PUBLISH_MODE_BLOGSPOT</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PUBLISHING_MODE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PUBLISHING_MODE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ADMIN_PERMISSION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Список сообщений администраторов по данному блогу.</title>
+    <content type="text">eual.jp@gmail.com</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADMIN_PERMISSION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADMIN_PERMISSION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ADULT_CONTENT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, содержит ли этот блог содержание только для взрослых</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADULT_CONTENT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ADULT_CONTENT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ALTERNATE_JSRENDER_ALLOWED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Разрешена ли альтернативная обработка JavaScript</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ALTERNATE_JSRENDER_ALLOWED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ALTERNATE_JSRENDER_ALLOWED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ANALYTICS_ACCOUNT_NUMBER</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Номер аккаунта Google Analytics для блога</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ANALYTICS_ACCOUNT_NUMBER"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ANALYTICS_ACCOUNT_NUMBER"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ARCHIVE_DATE_FORMAT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Номер формата даты в индексе архива</title>
+    <content type="text">9</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_DATE_FORMAT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_DATE_FORMAT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_ARCHIVE_FREQUENCY</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Частота архивирования блога</title>
+    <content type="text">MONTHLY</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_FREQUENCY"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_ARCHIVE_FREQUENCY"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_AUTHOR_PERMISSION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Список адресов электронной почты авторов, у которых есть разрешение на публикацию.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_AUTHOR_PERMISSION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_AUTHOR_PERMISSION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_BACKLINKS_ALLOWED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Отображение в блоге обратных ссылок на комментарии</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BACKLINKS_ALLOWED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BACKLINKS_ALLOWED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_BY_POST_ARCHIVING</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Предоставление страницы архива для каждого сообщения</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BY_POST_ARCHIVING"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_BY_POST_ARCHIVING"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_ACCESS</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Кто может оставлять комментарии</title>
+    <content type="text">REGISTERED</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_ACCESS"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_ACCESS"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_CAPTCHA</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Обязательная проверка Captcha для авторов комментариев</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_CAPTCHA"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_CAPTCHA"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_EMAIL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Список адресов электронной почты, на которые будут отправляться уведомления о новых комментариях</title>
+    <content type="text">eual.jp@gmail.com</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_EMAIL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_EMAIL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_FEED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Тип канала, предоставляемого для комментариев блога</title>
+    <content type="text">FULL</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FEED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FEED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_FORM_LOCATION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Расположение формы комментария в блоге</title>
+    <content type="text">EMBEDDED_IFRAME</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FORM_LOCATION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_FORM_LOCATION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MESSAGE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Сообщение комментария в блоге</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MESSAGE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MESSAGE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Включение модерации комментариев</title>
+    <content type="text">DISABLED</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION_DELAY</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Количество дней, по истечении которых новые комментарии подвергаются модерации</title>
+    <content type="text">14</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_DELAY"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_DELAY"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_MODERATION_EMAIL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Адрес электронной почты для отправки уведомлений о новых комментариях, нуждающихся в проверке</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_EMAIL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_MODERATION_EMAIL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENT_PROFILE_IMAGES</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Отображение картинок профиля в комментариях</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_PROFILE_IMAGES"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENT_PROFILE_IMAGES"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENTS_ALLOWED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, показывать ли комментарии</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_ALLOWED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_ALLOWED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_COMMENTS_TIME_STAMP_FORMAT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Номер формата времени публикации комментария</title>
+    <content type="text">29</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_TIME_STAMP_FORMAT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_COMMENTS_TIME_STAMP_FORMAT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CONVERT_LINE_BREAKS</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, нужно ли преобразовывать разрывы строк в &lt;br /&gt; теги в редакторе сообщений</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CONVERT_LINE_BREAKS"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CONVERT_LINE_BREAKS"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_PAGE_NOT_FOUND</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Содержание, отображаемое в тех случаях, когда запись или страница не найдены.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_PAGE_NOT_FOUND"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_PAGE_NOT_FOUND"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_ROBOTS_TXT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Файл robots.txt предоставляется поисковым системам.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_CUSTOM_ROBOTS_TXT_ENABLED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Предоставляет ли этот блог поисковым системам файл robots.txt?</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT_ENABLED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_CUSTOM_ROBOTS_TXT_ENABLED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DATE_FORMAT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Номер формата заголовка даты</title>
+    <content type="text">26</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DATE_FORMAT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DATE_FORMAT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DEFAULT_BACKLINKS_MODE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Режим обратных ссылок для сообщений по умолчанию</title>
+    <content type="text">DEFAULT_HAVE_BACKLINKS</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_BACKLINKS_MODE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_BACKLINKS_MODE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DEFAULT_COMMENTS_MODE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Режим комментариев по умолчанию для сообщений</title>
+    <content type="text">DEFAULT_HAVE_COMMENTS</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_COMMENTS_MODE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DEFAULT_COMMENTS_MODE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_DESCRIPTION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Описание блога</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DESCRIPTION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_DESCRIPTION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_EMAIL_POST_LINKS</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, показывать ли пользователям ссылку для отправки сообщений по электронной почте</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_EMAIL_POST_LINKS"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_EMAIL_POST_LINKS"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_FEED_REDIRECT_URL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">URL для перенаправления запросов на канал сообщений</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FEED_REDIRECT_URL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FEED_REDIRECT_URL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_FLOAT_ALIGNMENT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет включение плавающего выравнивания в блоге</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FLOAT_ALIGNMENT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_FLOAT_ALIGNMENT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_LOCALE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Язык для данного блога</title>
+    <content type="text">ru</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_LOCALE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_LOCALE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_M2B_WHITELIST_EMAIL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Список адресов электронной почты пользователей, которые могут публиковать сообщения в блоге по электронной почте.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_M2B_WHITELIST_EMAIL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_M2B_WHITELIST_EMAIL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_MAX_NUM</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Максимальное количество единиц для показа на главной странице"</title>
+    <content type="text">11</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_NUM"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_NUM"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_MAX_UNIT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Блок для отображения на главной странице</title>
+    <content type="text">POSTS</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_UNIT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_MAX_UNIT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_META_DESCRIPTION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Метаописание блога используется в поисковых системах.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_META_DESCRIPTION_ENABLED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">В этом блоге используется метаописание.</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION_ENABLED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_META_DESCRIPTION_ENABLED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_NAME</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Название блога</title>
+    <content type="text">Testing hakyll-convert</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_NAME"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_NAME"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PER_POST_FEED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Тип канала, предоставляемого для комментариев к отдельным сообщениям</title>
+    <content type="text">FULL</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PER_POST_FEED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PER_POST_FEED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_FEED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Тип канала, предоставляемого для сообщений блога</title>
+    <content type="text">FULL</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_FEED_FOOTER</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Нижний колонтитул, добавляемый в конце каждой записи канала сообщений</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED_FOOTER"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_FEED_FOOTER"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_POST_TEMPLATE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Шаблон для сообщений блога</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_TEMPLATE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_POST_TEMPLATE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_PROMOTED</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, возможно ли рекламирование данного блога в Blogger</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PROMOTED"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_PROMOTED"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_QUICK_EDITING</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, включено ли быстрое редактирование</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_QUICK_EDITING"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_QUICK_EDITING"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_READ_ACCESS_MODE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Тип доступа для читателей блога.</title>
+    <content type="text">PRIVATE</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READ_ACCESS_MODE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READ_ACCESS_MODE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_READER_PERMISSION</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Список адресов электронной почты пользователей, имеющих право на чтение этого блога.</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READER_PERMISSION"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_READER_PERMISSION"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SEARCHABLE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет индексирование данного блога поисковыми машинами</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEARCHABLE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEARCHABLE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SEND_EMAIL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Разделенный запятыми список адресов электронной почты, на которые будут отправляться новые сообщения блогов</title>
+    <content type="text"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEND_EMAIL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SEND_EMAIL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SHOW_TITLE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, показывать ли поле заголовка</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_TITLE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_TITLE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SHOW_URL</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Определяет, показывать ли поле связанной ссылки у составителя сообщения</title>
+    <content type="text">false</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_URL"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SHOW_URL"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_SUBDOMAIN</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Субдомен BlogSpot, в котором будет опубликован ваш блог</title>
+    <content type="text">testinghakyllconvert</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SUBDOMAIN"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_SUBDOMAIN"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_TIME_STAMP_FORMAT</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Число формата отметки времени</title>
+    <content type="text">15</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_STAMP_FORMAT"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_STAMP_FORMAT"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_TIME_ZONE</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Временная зона для этого блога</title>
+    <content type="text">America/Los_Angeles</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_ZONE"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_TIME_ZONE"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.settings.BLOG_USE_LIGHTBOX</id>
+    <published>2017-09-02T14:39:51.165-07:00</published>
+    <updated>2017-09-02T14:46:05.099-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#settings"/>
+    <title type="text">Показывать изображения в Lightbox при нажатии</title>
+    <content type="text">true</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_USE_LIGHTBOX"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/settings/BLOG_USE_LIGHTBOX"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.post-7643416819140719600</id>
+    <published>2017-09-02T14:44:00.002-07:00</published>
+    <updated>2017-09-02T14:44:31.203-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#post"/>
+    <title type="text"/>
+    <content type="html">&lt;a href="https://github.com/Minoru/hakyll-convert"&gt;Hakyll-convert&lt;/a&gt; provides a library and utility for importing blogs from a variety of engines (currently, Blogger and WordPress) to the &lt;a href="http://jaspervdj.be/hakyll/"&gt;Hakyll&lt;/a&gt; static site generator.&lt;br /&gt;&lt;br /&gt;We aim to: &lt;br /&gt;&lt;ul&gt;&lt;li&gt;avoid converting your content between formats (it usually comes in HTML and should stay as such without passing through filters)&lt;/li&gt;&lt;li&gt;allow for the possibility of &lt;a href="http://www.w3.org/Provider/Style/URI.html"&gt;Cool URIs&lt;/a&gt; by keeping relative page names the same as on your old blog (this only works if you use your own domain for your hosted site). If you don’t agree with us on that point, use &lt;code&gt;--output-format&lt;/code&gt; flag to specify your own output filename format.&lt;/li&gt;&lt;/ul&gt;This blog supports hakyll-convert by proving a set of test posts that can be exported and then used as a testing input for the program. </content>
+    <link rel="replies" type="application/atom+xml" href="https://testinghakyllconvert.blogspot.com/feeds/7643416819140719600/comments/default" title="Комментарии к сообщению"/>
+    <link rel="replies" type="text/html" href="http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html#comment-form" title="Комментарии: 1"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600"/>
+    <link rel="alternate" type="text/html" href="http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html" title=""/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+    <thr:total>1</thr:total>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.post-96427537133708969</id>
+    <published>2017-09-02T14:41:00.001-07:00</published>
+    <updated>2017-09-02T14:41:34.728-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#post"/>
+    <title type="text">My first testing post</title>
+    <content type="html">This is the first ever post on this blog.</content>
+    <link rel="replies" type="application/atom+xml" href="https://testinghakyllconvert.blogspot.com/feeds/96427537133708969/comments/default" title="Комментарии к сообщению"/>
+    <link rel="replies" type="text/html" href="http://testinghakyllconvert.blogspot.com/2017/09/my-first-testing-post.html#comment-form" title="Комментарии: 0"/>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/96427537133708969"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/posts/default/96427537133708969"/>
+    <link rel="alternate" type="text/html" href="http://testinghakyllconvert.blogspot.com/2017/09/my-first-testing-post.html" title="My first testing post"/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+    <thr:total>0</thr:total>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5162495313991119940.post-4418218280178244067</id>
+    <published>2017-09-02T14:45:23.302-07:00</published>
+    <updated>2017-09-02T14:45:23.302-07:00</updated>
+    <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#comment"/>
+    <title type="text">This is an example comment.</title>
+    <content type="html">This is an example comment.</content>
+    <link rel="edit" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/7643416819140719600/comments/default/4418218280178244067"/>
+    <link rel="self" type="application/atom+xml" href="https://www.blogger.com/feeds/5162495313991119940/7643416819140719600/comments/default/4418218280178244067"/>
+    <link rel="alternate" type="text/html" href="http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html?showComment=1504388723302#c4418218280178244067" title=""/>
+    <author>
+      <name>Minoru</name>
+      <uri>https://www.blogger.com/profile/15979236009981641914</uri>
+      <email>noreply@blogger.com</email>
+      <gd:image rel="http://schemas.google.com/g/2005#thumbnail" width="32" height="32" src="//bp3.blogger.com/_Nb6QYFUvBjY/SI9jSOVKAxI/AAAAAAAAAAU/rxcSy_1qiGY/S220-s32/Programmaster_80x80.jpg"/>
+    </author>
+    <thr:in-reply-to href="http://testinghakyllconvert.blogspot.com/2017/09/hakyll-convert-provides-library-and.html" ref="tag:blogger.com,1999:blog-5162495313991119940.post-7643416819140719600" source="https://www.blogger.com/feeds/5162495313991119940/posts/default/7643416819140719600" type="text/html"/>
+    <gd:extendedProperty name="blogger.itemClass" value="pid-1244904998"/>
+    <gd:extendedProperty name="blogger.displayTime" value="2 сентября 2017 г., 14:45"/>
+  </entry>
+</feed>
