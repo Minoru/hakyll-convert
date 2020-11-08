@@ -18,8 +18,11 @@ Usage
 -----
 
 1. You should make a dump (backup) of all the posts in your existing
-   Blogger/Wordpress blog. This can be done through the control panel. (More
-   precise instructions will be available once we actually write them. Sorry.)
+   Blogger/Wordpress blog. See [this post in the Blogger Help
+   Center](https://support.google.com/blogger/answer/41387) for details.
+   (Instructions for Wordpress will be available once we actually write them.
+   Sorry.)
+
 2. Install `hakyll-convert` using `cabal-install`:
 
    ```console
