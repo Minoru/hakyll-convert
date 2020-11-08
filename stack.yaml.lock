@@ -13,7 +13,7 @@ packages:
     hackage: datetime-0.3.1@sha256:7e275bd0ce7a2f66445bedfa0006abaf4d41af4c2204c3f8004c17eab5480e74,1534
 snapshots:
 - completed:
-    size: 423848
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/6/9.yaml
-    sha256: a1c1670b9a253a56c156fcbc203c2bb65bb335513d7aad97be619b620189f121
-  original: lts-6.9
+    size: 532177
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/16/20.yaml
+    sha256: 0e14ba5603f01e8496e8984fd84b545a012ca723f51a098c6c9d3694e404dc6d
+  original: lts-16.20

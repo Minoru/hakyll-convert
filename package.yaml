@@ -24,7 +24,8 @@ dependencies:
   - filepath
   - text
   - time
-  - xml
+  - xml-conduit
+  - xml-types
 
 library:
   source-dirs: src
@@ -43,8 +44,8 @@ executable:
 
 tests:
   golden:
-    main: Golden.hs
-    source-dirs: test
+    main: Main.hs
+    source-dirs: test/golden
     dependencies:
       - datetime
       - hakyll-convert
@@ -53,8 +54,8 @@ tests:
       - temporary
 
   spec:
-    main: Spec.hs
-    source-dirs: test
+    main: Main.hs
+    source-dirs: test/spec
     dependencies:
       - datetime
       - hakyll-convert

@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+
 module Hakyll.Convert.Wordpress
     (readPosts, distill)
   where
@@ -11,18 +12,21 @@ import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
 import           Data.Time              (UTCTime)
 import           Data.Time.Format       (parseTimeM, formatTime, defaultTimeLocale, rfc822DateFormat)
-import           Text.XML.Light
+
 import           Text.RSS.Import
 import           Text.RSS.Syntax
+import           Data.XML.Types         (Name(..), Element(..), elementChildren, elementText)
+import qualified Text.XML               as XML
 
 import           Hakyll.Convert.Common
 
 -- | Returns only public posts
 readPosts :: FilePath -> IO (Maybe [RSSItem])
 readPosts f = do
-    fmap select . parseRssDoc <$> B.readFile f
+    doc <- XML.readFile (XML.def :: XML.ParseSettings) f
+    let root = XML.toXMLElement $ XML.documentRoot doc
+    return $ fmap select (elementToRSS root)
   where
-    parseRssDoc x = elementToRSS =<< parseXMLDoc (T.decodeUtf8 x)
     select        = filter isPublished  .  rssItems . rssChannel
 
 isPublished :: RSSItem -> Bool
@@ -30,7 +34,7 @@ isPublished i = "publish" `elem` getStatus i
 
 distill :: Bool -> RSSItem -> DistilledPost
 distill extractComments item = DistilledPost
-    { dpTitle = T.pack <$> rssItemTitle item
+    { dpTitle = rssItemTitle item
     , dpBody  = body
     , dpUri   = link
     , dpTags  = tags
@@ -48,20 +52,18 @@ distill extractComments item = DistilledPost
                            ]
         else content
     link = fromMaybe "" (rssItemLink item)
-    content = T.pack
-            $ unlines (map strContent contentTags)
+    content = T.unlines (map strContent contentTags)
     categories = rssCategoriesOfType "category"
     tags       = rssCategoriesOfType "post_tag"
-    contentTags = concatMap (findElements contentTag)
-        (rssItemOther item)
+    contentTags = concatMap (findElements contentTag) (rssItemOther item)
     rssCategoriesOfType ty =
-        [ T.pack (rssCategoryValue c)
+        [ rssCategoryValue c
         | c <- rssItemCategories item
         , rssCategoryDomain c == Just ty ]
-    contentTag = QName
-        { qName   = "encoded"
-        , qURI    = Just "http://purl.org/rss/1.0/modules/content/"
-        , qPrefix = Just "content"
+    contentTag = Name
+        { nameLocalName = "encoded"
+        , nameNamespace = Just "http://purl.org/rss/1.0/modules/content/"
+        , namePrefix    = Just "content"
         }
     comments = T.intercalate "\n" $ map formatComment $ commentTags
     commentTags = rssItemOther item >>= findElements commentTag
@@ -70,7 +72,7 @@ distill extractComments item = DistilledPost
     date = case parseTime' =<< rssItemPubDate item of
                Nothing -> fromJust $ parseTime' "Thu, 01 Jan 1970 00:00:00 UTC"
                Just  d -> d
-    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
+    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f (T.unpack d))
         [ rfc822DateFormat
         ]
 
@@ -88,28 +90,42 @@ formatComment commentElement =
          , "<div class='hakyll-convert-comment-body'>", comment, "</div>"
          , "</div>"
          ]
-    where pubdate = T.pack $ fromMaybe "unknown date" $ findField "comment_date"
-          author = T.pack $ fromMaybe "unknown author" $ findField "comment_author"
-          comment = T.pack $ fromMaybe "" $ findField "comment_content"
+    where pubdate = fromMaybe "unknown date" $ findField "comment_date"
+          author = fromMaybe "unknown author" $ findField "comment_author"
+          comment = fromMaybe "" $ findField "comment_content"
           findField name =
               strContent <$> findChild (wordpressTag name) commentElement
 
-wordpressTag :: String -> QName
+wordpressTag :: T.Text -> Name
 wordpressTag name =
-    QName
-    { qName = name
-    , qURI = Just "http://wordpress.org/export/1.2/"
-    , qPrefix = Just "wp"
+    Name
+    { nameLocalName = name
+    , nameNamespace = Just "http://wordpress.org/export/1.2/"
+    , namePrefix    = Just "wp"
     }
 
-getStatus :: RSSItem -> [String]
+getStatus :: RSSItem -> [T.Text]
 getStatus item =
     map strContent statusTags
   where
-    statusTags = concatMap (findElements (wpName "status"))
-        (rssItemOther item)
-    wpName n = QName
-        { qName   = n
-        , qURI    = Just "http://wordpress.org/export/1.2/"
-        , qPrefix = Just "wp"
-        }
+    statusTags = concatMap (findElements (wordpressTag "status")) (rssItemOther item)
+
+-- | Find all non-nested elements which are named `name`, starting with `root`.
+-- ("Non-nested" means we don't search sub-elements of an element that's named
+-- `name`.)
+findElements :: Name -> Element -> [Element]
+findElements name element =
+  if elementName element == name
+    then [element]
+    else concatMap (findElements name) (elementChildren element)
+
+-- | Find first immediate child of `root` which is named `name`.
+findChild :: Name -> Element -> Maybe Element
+findChild name element =
+  let children = elementChildren element
+      matching = filter (\child -> elementName child == name) children
+  in listToMaybe matching
+
+-- | The contents of the element (ignoring non-text sub-elements).
+strContent :: Element -> T.Text
+strContent element = T.concat $ elementText element

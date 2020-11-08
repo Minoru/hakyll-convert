@@ -1,6 +1,8 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
 {-# LANGUAGE FlexibleContexts   #-}
+{-# LANGUAGE ExplicitForAll     #-}
+
 module Hakyll.Convert.Blogger
     (FullPost(..), readPosts, distill)
   where
@@ -26,7 +28,8 @@ import           Data.Time.Format             (parseTimeM, defaultTimeLocale)
 import           Text.Atom.Feed
 import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
-import           Text.XML.Light
+import           Data.XML.Types               (Element(..), Name(..), Node(..), elementChildren)
+import qualified Text.XML                     as XML
 
 import           Hakyll.Convert.Common
 
@@ -34,7 +37,7 @@ import           Hakyll.Convert.Common
 data FullPost = FullPost
     { fpPost     :: Entry
     , fpComments :: [Entry]
-    , fpUri      :: String
+    , fpUri      :: T.Text
     }
   deriving (Show)
 
@@ -44,12 +47,12 @@ data FullPost = FullPost
 --   If it's a comment, it should be the URI for the corresponding
 --   post.
 data BloggerEntry =
-    Post    { beUri_ :: String, beEntry :: Entry }
-  | Comment { beUri_ :: String, beEntry :: Entry }
+    Post    { beUri_ :: T.Text, beEntry :: Entry }
+  | Comment { beUri_ :: T.Text, beEntry :: Entry }
   | Orphan  { beEntry :: Entry }
   deriving (Show)
 
-beUri :: BloggerEntry -> Maybe String
+beUri :: BloggerEntry -> Maybe T.Text
 beUri (Orphan _)    = Nothing
 beUri (Post u _)    = Just u
 beUri (Comment u _) = Just u
@@ -61,30 +64,27 @@ beUri (Comment u _) = Just u
 -- | Returns only published posts
 readPosts :: FilePath -> IO (Maybe [FullPost])
 readPosts f = do
-    parseAtomDoc <$> B.readFile f
-  where
-    parseAtomDoc x =
-        select =<< parseXMLDoc (T.decodeUtf8 x)
-    select =
-        fmap (extractPosts . feedEntries) . elementFeed . deleteDrafts
+    doc <- XML.readFile (XML.def :: XML.ParseSettings) f
+    let root = XML.toXMLElement $ XML.documentRoot doc
+    return $ fmap (extractPosts . feedEntries) $ elementFeed $ deleteDrafts root
 
 -- has to be done on the XML level as our atom lib doesn't understand
 -- the blogger-specific XML for drafts
 deleteDrafts :: Element -> Element
 deleteDrafts e =
-    e { elContent = filter isInnocent (elContent e) }
+    e { elementNodes = filter isInnocent (elementNodes e) }
   where
-    isInnocent (Elem e) = not (isDraft e)
+    isInnocent (NodeElement e) = not (isDraft e)
     isInnocent _ = True
 
 isDraft :: Element -> Bool
 isDraft e =
-    isJust $ findElement draft e
+    not . null $ findElements draft e
   where
-    draft = QName
-        { qName   = "draft"
-        , qURI    = Just "http://purl.org/atom/app#"
-        , qPrefix = Just "app"
+    draft = Name
+        { nameLocalName = "draft"
+        , nameNamespace = Just "http://purl.org/atom/app#"
+        , namePrefix    = Just "app"
         }
 
 
@@ -133,25 +133,25 @@ identifyEntry e =
                  Nothing -> Orphan e
   where
     isPost  = any (isBloggerCategoryOfType "post") . entryCategories
-    postUrl = takeWhile (/= '?') . linkHref
+    postUrl = T.takeWhile (/= '?') . linkHref
     getLink ty = case filter (isLink ty) $ entryLinks e of
         []  -> Nothing
         [x] -> Just x
         xs  -> entryError e (oopsLink ty)
     isLink ty l = linkRel l == Just (Right ty) && linkType l == Just "text/html"
     oopsSelf    = "Was expecting blog posts to have a self link"
-    oopsLink ty = "Was expecting entries have at most one link of type " ++ ty
+    oopsLink ty = T.append "Was expecting entries have at most one link of type " ty
 
 isBloggerCategory :: Category -> Bool
 isBloggerCategory = (== Just "http://schemas.google.com/g/2005#kind")
                   . catScheme
 
-isBloggerCategoryOfType :: String -- ^ \"comment\", \"post\", etc
+isBloggerCategoryOfType :: T.Text -- ^ \"comment\", \"post\", etc
                         -> Category
                         -> Bool
 isBloggerCategoryOfType ty c =
     isBloggerCategory c &&
-    catTerm c == "http://schemas.google.com/blogger/2008/kind#" ++ ty
+    catTerm c == T.append "http://schemas.google.com/blogger/2008/kind#" ty
 
 -- ---------------------------------------------------------------------
 --
@@ -181,7 +181,7 @@ distill extractComments fp = DistilledPost
                               , comments]
            else article
 
-    fromContent (Just (HTMLContent x)) = T.pack x
+    fromContent (Just (HTMLContent x)) = x
     fromContent _ = error "Hakyll.Convert.Blogger.distill expecting HTML"
 
     formatComment c = T.intercalate "\n" [
@@ -194,21 +194,21 @@ distill extractComments fp = DistilledPost
       ]
       where
       pubdate = case entryPublished c of
-                    Just d  -> T.pack d
+                    Just d  -> d
                     Nothing -> "unknown date"
-      author = T.unwords $ map (T.pack . personName) (entryAuthors c)
+      author = T.unwords $ map personName (entryAuthors c)
       comment = fromContent $ entryContent c
     --
     title p = case txtToString (entryTitle p) of
          "" -> Nothing
          t  -> Just (T.pack t)
-    tags = map (T.pack . catTerm)
+    tags = map catTerm
          . filter (not . isBloggerCategory)
          . entryCategories
     date x = case parseTime' =<< entryPublished x of
                  Nothing -> fromJust $ parseTime' "1970-01-01T00:00:00Z"
                  Just  d -> d
-    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f d)
+    parseTime' d = msum $ map (\f -> parseTimeM True defaultTimeLocale f (T.unpack d))
         [ "%FT%T%Q%z"  -- with time zone
         , "%FT%T%QZ"   -- zulu time
         ]
@@ -217,11 +217,21 @@ distill extractComments fp = DistilledPost
 -- odds and ends
 -- ---------------------------------------------------------------------
 
+entryError :: forall a. Entry -> T.Text -> a
 entryError e msg =
-    error $ msg ++ " [on entry " ++ entryId e ++ "]\n" ++ show e
+    error $ (T.unpack msg) ++ " [on entry " ++ (T.unpack $ entryId e) ++ "]\n" ++ show e
 
 buckets :: Ord b => (a -> b) -> [a] -> [ (b,[a]) ]
 buckets f = map (first head . unzip)
           . groupBy ((==) `on` fst)
           . sortBy (compare `on` fst)
           . map (\x -> (f x, x))
+
+-- | Find all non-nested elements which are named `name`, starting with `root`.
+-- ("Non-nested" means we don't search sub-elements of an element that's named
+-- `name`.)
+findElements :: Name -> Element -> [Element]
+findElements name element =
+  if elementName element == name
+    then [element]
+    else concatMap (findElements name) (elementChildren element)

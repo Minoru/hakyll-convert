@@ -14,8 +14,10 @@ import qualified Data.Text.Encoding           as T
 import           Hakyll.Convert.Common        (DistilledPost(..))
 import           Hakyll.Convert.OutputFormat  (formatPath)
 
--- | Save a post along with its comments in a format that Hakyll understands
-savePost :: FilePath -> T.Text -> String -> DistilledPost -> IO String
+-- | Save a post along with its comments in a format that Hakyll understands.
+--
+-- Returns the filename of the file that was written.
+savePost :: FilePath -> T.Text -> T.Text -> DistilledPost -> IO T.Text
 savePost odir oformat ext post = do
     createDirectoryIfMissing True (takeDirectory fname)
     B.writeFile fname . T.encodeUtf8 $ T.unlines
@@ -29,11 +31,11 @@ savePost odir oformat ext post = do
         , formatBody (dpBody post)
         ]
 
-    return fname
+    return $ T.pack fname
   where
     metadata k v = k <> ": " <> v
     --
-    fname    = odir </> postPath <.> ext
+    fname    = odir </> postPath <.> (T.unpack ext)
     postPath = T.unpack $ fromJust $ formatPath oformat post
     --
     formatTitle (Just t) = t
