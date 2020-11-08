@@ -24,7 +24,8 @@ dependencies:
   - filepath
   - text
   - time
-  - xml
+  - xml-conduit
+  - xml-types
 
 library:
   source-dirs: src

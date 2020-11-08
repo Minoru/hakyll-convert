@@ -9,7 +9,7 @@ import Test.Tasty.HUnit
 import Data.DateTime (fromGregorian)
 import qualified Data.Text as T
 import qualified Text.RSS.Syntax as RSS
-import qualified Text.XML.Light as XML
+import qualified Data.XML.Types as XML
 
 import Hakyll.Convert.Wordpress
 import Hakyll.Convert.Common (DistilledPost(..))
@@ -45,22 +45,38 @@ extractsPostUri =
     ]
   where
   createInput uri = (RSS.nullItem "First post")
-    { RSS.rssItemLink = Just $ T.unpack uri
+    { RSS.rssItemLink = Just uri
     }
 
-contentTag :: XML.QName
+contentTag :: XML.Name
 contentTag =
-  XML.QName
-    { XML.qName   = "encoded"
-    , XML.qURI    = Just "http://purl.org/rss/1.0/modules/content/"
-    , XML.qPrefix = Just "content"
+  XML.Name
+    { XML.nameLocalName = "encoded"
+    , XML.nameNamespace = Just "http://purl.org/rss/1.0/modules/content/"
+    , XML.namePrefix    = Just "content"
+    }
+
+namedBlankElement :: XML.Name -> XML.Element
+namedBlankElement name =
+  XML.Element {
+      XML.elementName = name
+    , XML.elementAttributes = []
+    , XML.elementNodes = []
+    }
+
+namedElement :: XML.Name -> [XML.Node] -> XML.Element
+namedElement name nodes =
+  XML.Element {
+      XML.elementName = name
+    , XML.elementAttributes = []
+    , XML.elementNodes = nodes
     }
 
 extractsPostBody :: TestTree
 extractsPostBody =
   testGroup
     "extracts post's body"
-    [ testCase body (dpBody (distill False (createInput body)) @?= T.pack (body ++ "\n"))
+    [ testCase (T.unpack body) (dpBody (distill False (createInput body)) @?= T.append body "\n")
     | body <-
         [ "<p>Today was a snowy day, and I decided to...</p>"
         , "<h3>My opinion on current affairs</h3><p>So you see, I...</p>"
@@ -69,17 +85,7 @@ extractsPostBody =
   where
   createInput body = (RSS.nullItem "Test post")
     { RSS.rssItemOther =
-        [
-          XML.blank_element
-            { XML.elName = contentTag
-            , XML.elContent =
-                [ XML.Text
-                    (XML.blank_cdata
-                      { XML.cdVerbatim = XML.CDataVerbatim
-                      , XML.cdData = body
-                      })
-                ]
-            }
+        [ namedElement contentTag [ XML.NodeContent $ XML.ContentText body ]
         ]
     }
 
@@ -87,7 +93,7 @@ combinesMultipleContentTags :: TestTree
 combinesMultipleContentTags =
   testCase
     "combines multiple content:encoded tags into the post body"
-    (dpBody (distill False input) @?= T.pack (unlines [body1, body2]))
+    (dpBody (distill False input) @?= T.unlines [body1, body2])
   where
   body1 = "<h3>Welcome!</h3>"
   body2 = "<p>Hope you like my blog</p>"
@@ -98,23 +104,13 @@ combinesMultipleContentTags =
         , createElement body2
         ]
     }
-  createElement body =
-    XML.blank_element
-      { XML.elName = contentTag
-      , XML.elContent =
-          [ XML.Text
-              (XML.blank_cdata
-                { XML.cdVerbatim = XML.CDataVerbatim
-                , XML.cdData = body
-                })
-          ]
-      }
+  createElement body = namedElement contentTag [ XML.NodeContent $ XML.ContentText body ]
 
 extractsPostTitle :: TestTree
 extractsPostTitle =
   testGroup
     "extracts post's title"
-    [ testCase title (dpTitle (distill False (RSS.nullItem title)) @?= Just (T.pack title))
+    [ testCase (T.unpack title) (dpTitle (distill False (RSS.nullItem title)) @?= Just title)
     | title <-
         [ "First post"
         , "You won't believe what happened to me today"
@@ -122,36 +118,36 @@ extractsPostTitle =
         ]
     ]
 
-commentTag :: XML.QName
+commentTag :: XML.Name
 commentTag =
-  XML.QName
-    { XML.qName = "comment"
-    , XML.qURI = Just "http://wordpress.org/export/1.2/"
-    , XML.qPrefix = Just "wp"
+  XML.Name
+    { XML.nameLocalName = "comment"
+    , XML.nameNamespace = Just "http://wordpress.org/export/1.2/"
+    , XML.namePrefix    = Just "wp"
     }
 
-commentContentTag :: XML.QName
+commentContentTag :: XML.Name
 commentContentTag =
-  XML.QName
-    { XML.qName = "comment_content"
-    , XML.qURI = Just "http://wordpress.org/export/1.2/"
-    , XML.qPrefix = Just "wp"
+  XML.Name
+    { XML.nameLocalName = "comment_content"
+    , XML.nameNamespace = Just "http://wordpress.org/export/1.2/"
+    , XML.namePrefix    = Just "wp"
     }
 
-commentDateTag :: XML.QName
+commentDateTag :: XML.Name
 commentDateTag =
-  XML.QName
-    { XML.qName = "comment_date"
-    , XML.qURI = Just "http://wordpress.org/export/1.2/"
-    , XML.qPrefix = Just "wp"
+  XML.Name
+    { XML.nameLocalName = "comment_date"
+    , XML.nameNamespace = Just "http://wordpress.org/export/1.2/"
+    , XML.namePrefix    = Just "wp"
     }
 
-commentAuthorTag :: XML.QName
+commentAuthorTag :: XML.Name
 commentAuthorTag =
-  XML.QName
-    { XML.qName = "comment_author"
-    , XML.qURI = Just "http://wordpress.org/export/1.2/"
-    , XML.qPrefix = Just "wp"
+  XML.Name
+    { XML.nameLocalName = "comment_author"
+    , XML.nameNamespace = Just "http://wordpress.org/export/1.2/"
+    , XML.namePrefix    = Just "wp"
     }
 
 canSkipComments :: TestTree
@@ -162,27 +158,10 @@ canSkipComments =
   where
   input = (RSS.nullItem "Testing...")
     { RSS.rssItemOther =
-        [ XML.blank_element
-            { XML.elName = contentTag
-            , XML.elContent =
-                [ XML.Text
-                    (XML.blank_cdata
-                      { XML.cdVerbatim = XML.CDataVerbatim
-                      , XML.cdData = "<p>Hello, world!</p>"
-                      })
-                ]
-            }
-
-        , XML.blank_element
-            { XML.elName = commentTag
-            , XML.elContent =
-                [ XML.Text
-                    (XML.blank_cdata
-                      { XML.cdVerbatim = XML.CDataVerbatim
-                      , XML.cdData = "<p>I'd like to point out that...</p>"
-                      })
-                ]
-            }
+        [ namedElement contentTag [ XML.NodeContent $ XML.ContentText "<p>Hello, world!</p>" ]
+        , namedElement commentTag
+            [ XML.NodeContent $ XML.ContentText "<p>I'd like to point out that...</p>"
+            ]
         ]
     }
 
@@ -198,17 +177,7 @@ canExtractComments =
   where
   createInput comment = (RSS.nullItem "Testing...")
     { RSS.rssItemOther =
-        [ XML.blank_element
-            { XML.elName = contentTag
-            , XML.elContent =
-                [ XML.Text
-                    (XML.blank_cdata
-                      { XML.cdVerbatim = XML.CDataVerbatim
-                      , XML.cdData = "<p>Is this thing on?</p>"
-                      })
-                ]
-            }
-
+        [ namedElement contentTag [ XML.NodeContent $ XML.ContentText "<p>Is this thing on?</p>" ]
         , comment
         ]
     }
@@ -218,21 +187,10 @@ canExtractComments =
       "comments with no \"published\" date and no author"
       (dpBody (distill True (createInput noDateNoAuthorComment)) @?= expectedNoDateNoAuthor)
   noDateNoAuthorComment =
-    XML.blank_element
-      { XML.elName = commentTag
-      , XML.elContent =
-          [ XML.Elem $ XML.blank_element
-              { XML.elName = commentContentTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "<p>hi</p>"
-                        })
-                  ]
-              }
-          ]
-      }
+    namedElement commentTag
+      [ XML.NodeElement $
+          namedElement commentContentTag [ XML.NodeContent $ XML.ContentText "<p>hi</p>" ]
+      ]
   expectedNoDateNoAuthor =
     "<p>Is this thing on?</p>\n\n\n\
     \<h3 id='hakyll-convert-comments-title'>Comments</h3>\n\
@@ -248,31 +206,10 @@ canExtractComments =
       "comments with a \"published\" date but no author"
       (dpBody (distill True (createInput dateNoAuthorComment)) @?= expectedDateNoAuthor)
   dateNoAuthorComment =
-    XML.blank_element
-      { XML.elName = commentTag
-      , XML.elContent =
-          [ XML.Elem $ XML.blank_element
-              { XML.elName = commentContentTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "<p>hi</p>"
-                        })
-                  ]
-              }
-          , XML.Elem $ XML.blank_element
-              { XML.elName = commentDateTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "2017-09-02 21:28:46"
-                        })
-                  ]
-              }
-          ]
-      }
+    namedElement commentTag
+      [ XML.NodeElement $ namedElement commentContentTag [ XML.NodeContent $ XML.ContentText "<p>hi</p>" ]
+      , XML.NodeElement $ namedElement commentDateTag [ XML.NodeContent $ XML.ContentText "2017-09-02 21:28:46" ]
+      ]
   expectedDateNoAuthor =
     "<p>Is this thing on?</p>\n\n\n\
     \<h3 id='hakyll-convert-comments-title'>Comments</h3>\n\
@@ -288,31 +225,14 @@ canExtractComments =
       "comments with no \"published\" date but with an author"
       (dpBody (distill True (createInput commentNoDateAuthor)) @?= expectedNoDateAuthor)
   commentNoDateAuthor =
-    XML.blank_element
-      { XML.elName = commentTag
-      , XML.elContent =
-          [ XML.Elem $ XML.blank_element
-              { XML.elName = commentContentTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "<p>Here's the thing: …</p>"
-                        })
-                  ]
-              }
-          , XML.Elem $ XML.blank_element
-              { XML.elName = commentAuthorTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "Terry Jones"
-                        })
-                  ]
-              }
-          ]
-      }
+    namedElement commentTag
+      [ XML.NodeElement $
+          namedElement
+            commentContentTag
+            [ XML.NodeContent $ XML.ContentText "<p>Here's the thing: …</p>" ]
+      , XML.NodeElement $
+          namedElement commentAuthorTag [ XML.NodeContent $ XML.ContentText "Terry Jones" ]
+      ]
   expectedNoDateAuthor =
     "<p>Is this thing on?</p>\n\n\n\
     \<h3 id='hakyll-convert-comments-title'>Comments</h3>\n\
@@ -328,41 +248,14 @@ canExtractComments =
       "comments with a \"published\" date and an author"
       (dpBody (distill True (createInput commentDateAuthor)) @?= expectedDateAuthor)
   commentDateAuthor =
-    XML.blank_element
-      { XML.elName = commentTag
-      , XML.elContent =
-          [ XML.Elem $ XML.blank_element
-              { XML.elName = commentContentTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "<p>It sure is!</p>"
-                        })
-                  ]
-              }
-          , XML.Elem $ XML.blank_element
-              { XML.elName = commentDateTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "2017-09-02 21:28:46"
-                        })
-                  ]
-              }
-          , XML.Elem $ XML.blank_element
-              { XML.elName = commentAuthorTag
-              , XML.elContent =
-                  [ XML.Text
-                      (XML.blank_cdata
-                        { XML.cdVerbatim = XML.CDataVerbatim
-                        , XML.cdData = "Elizabeth Keyes"
-                        })
-                  ]
-              }
-          ]
-      }
+    namedElement commentTag
+      [ XML.NodeElement $ namedElement commentContentTag
+          [ XML.NodeContent $ XML.ContentText "<p>It sure is!</p>" ]
+      , XML.NodeElement $ namedElement commentDateTag
+          [ XML.NodeContent $ XML.ContentText "2017-09-02 21:28:46" ]
+      , XML.NodeElement $ namedElement commentAuthorTag
+          [ XML.NodeContent $ XML.ContentText "Elizabeth Keyes" ]
+      ]
   expectedDateAuthor =
     "<p>Is this thing on?</p>\n\n\n\
     \<h3 id='hakyll-convert-comments-title'>Comments</h3>\n\
@@ -381,52 +274,14 @@ usesTheFirstCommentAuthorTag =
   where
   input = (RSS.nullItem "Testing...")
     { RSS.rssItemOther =
-        [ XML.blank_element
-            { XML.elName = contentTag
-            , XML.elContent =
-                [ XML.Text
-                    (XML.blank_cdata
-                      { XML.cdVerbatim = XML.CDataVerbatim
-                      , XML.cdData = "<p>Check this out!</p>"
-                      })
-                ]
-            }
+        [ namedElement contentTag
+            [ XML.NodeContent $ XML.ContentText "<p>Check this out!</p>" ]
 
-        , XML.blank_element
-            { XML.elName = commentTag
-            , XML.elContent =
-                [ XML.Elem $ XML.blank_element
-                    { XML.elName = commentContentTag
-                    , XML.elContent =
-                        [ XML.Text
-                            (XML.blank_cdata
-                              { XML.cdVerbatim = XML.CDataVerbatim
-                              , XML.cdData = "<p>Cool!</p>"
-                              })
-                        ]
-                    }
-                , XML.Elem $ XML.blank_element
-                    { XML.elName = commentAuthorTag
-                    , XML.elContent =
-                        [ XML.Text
-                            (XML.blank_cdata
-                              { XML.cdVerbatim = XML.CDataVerbatim
-                              , XML.cdData = "Alexander Batischev"
-                              })
-                        ]
-                    }
-                , XML.Elem $ XML.blank_element
-                    { XML.elName = commentAuthorTag
-                    , XML.elContent =
-                        [ XML.Text
-                            (XML.blank_cdata
-                              { XML.cdVerbatim = XML.CDataVerbatim
-                              , XML.cdData = "John Doe"
-                              })
-                        ]
-                    }
-                ]
-            }
+        , namedElement commentTag
+            [ XML.NodeElement $ namedElement commentContentTag [ XML.NodeContent $ XML.ContentText "<p>Cool!</p>" ]
+            , XML.NodeElement $ namedElement commentAuthorTag [ XML.NodeContent $ XML.ContentText "Alexander Batischev" ]
+            , XML.NodeElement $ namedElement commentAuthorTag [ XML.NodeContent $ XML.ContentText "John Doe" ]
+            ]
         ]
     }
 
@@ -444,7 +299,7 @@ turnsIncorrectDatesIntoEpochStart :: TestTree
 turnsIncorrectDatesIntoEpochStart =
   testGroup
     "turns incorrect \"published\" dates into Unix epoch start date"
-    [ testCase date (dpDate (distill False (createInput date)) @?= expected)
+    [ testCase (T.unpack date) (dpDate (distill False (createInput date)) @?= expected)
     | date <- [
           "First of April"
         , "2020.07.30"
@@ -467,7 +322,7 @@ parsesDates :: TestTree
 parsesDates =
   testGroup
     "parses \"published\" dates"
-    [ testCase dateStr (dpDate (distill False (createInput dateStr)) @?= expected)
+    [ testCase (T.unpack dateStr) (dpDate (distill False (createInput dateStr)) @?= expected)
     | (dateStr, expected) <- [
           ("Sun, 06 Nov 1994 08:49:37 GMT", fromGregorian 1994 11 6 8 49 37)
         , ("Fri, 31 Jul 2020 22:21:59 EST", fromGregorian 2020 8 1 3 21 59)

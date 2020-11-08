@@ -58,7 +58,7 @@ extractsPostBody :: TestTree
 extractsPostBody =
   testGroup
     "extracts post's body"
-    [ testCase body (dpBody (distill False (createInput body)) @?= T.pack body)
+    [ testCase (T.unpack body) (dpBody (distill False (createInput body)) @?= body)
     | body <-
         [ "<p>Today was a snowy day, and I decided to...</p>"
         , "<h3>My opinion on current affairs</h3><p>So you see, I...</p>"
@@ -82,7 +82,7 @@ extractsPostTitle :: TestTree
 extractsPostTitle =
   testGroup
     "extracts post's title"
-    [ testCase title (dpTitle (distill False (createInput title)) @?= Just (T.pack title))
+    [ testCase (T.unpack title) (dpTitle (distill False (createInput title)) @?= Just (title))
     | title <-
         [ "First post"
         , "You won't believe what happened to me today"
@@ -328,7 +328,7 @@ turnsIncorrectDatesIntoEpochStart :: TestTree
 turnsIncorrectDatesIntoEpochStart =
   testGroup
     "turns incorrect \"published\" dates into Unix epoch start date"
-    [ testCase date (dpDate (distill False (createInput date)) @?= expected)
+    [ testCase (T.unpack date) (dpDate (distill False (createInput date)) @?= expected)
     | date <- [
           "First of April"
         , "2020.07.30"
@@ -360,7 +360,7 @@ parsesDates :: TestTree
 parsesDates =
   testGroup
     "parses \"published\" dates"
-    [ testCase dateStr (dpDate (distill False (createInput dateStr)) @?= expected)
+    [ testCase (T.unpack dateStr) (dpDate (distill False (createInput dateStr)) @?= expected)
     | (dateStr, expected) <- [
           ("2020-07-30T15:50:21Z", fromGregorian 2020 7 30 15 50 21)
         , ("1015-02-18T01:04:13Z", fromGregorian 1015 2 18 1 4 13)

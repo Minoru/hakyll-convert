@@ -24,7 +24,6 @@ import           Text.RSS.Syntax
 import           Text.Atom.Feed
 import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
-import           Text.XML.Light
 
 import           Hakyll.Convert.Common
 import           Hakyll.Convert.IO
