@@ -22,4 +22,4 @@ blogger_00 =
     | (no, offset) <- map (\n -> (show n, n)) [0..2]
     ]
   where
-  helper = conversionHelper readPosts "test/data/blogger-000/"
+  helper = conversionHelper readPosts "test/golden/data/blogger-000/"

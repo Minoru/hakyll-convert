@@ -1,3 +1,5 @@
+module Main where
+
 import Test.Tasty (defaultMain, testGroup)
 
 import qualified Spec.Blogger as Blogger

@@ -22,4 +22,4 @@ wordpress_00 =
     | (no, offset) <- map (\n -> (show n, n)) [0..11]
     ]
   where
-  helper = conversionHelper readPosts "test/data/wordpress-000/"
+  helper = conversionHelper readPosts "test/golden/data/wordpress-000/"

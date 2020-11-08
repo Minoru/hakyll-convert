@@ -25,7 +25,7 @@ writesUntitledPost :: TestTree
 writesUntitledPost =
   goldenVsString
     "Writes untitled post to a file"
-    "test/data/io-000/untitled-post.golden"
+    "test/golden/data/io-000/untitled-post.golden"
     (withSystemTempDirectory "hakyll-convert" $ \tempDir -> do
       let output_format = "output"
       let file_extension = "html"
@@ -45,7 +45,7 @@ writesPostWithTitle :: TestTree
 writesPostWithTitle =
   goldenVsString
     "Writes post with title to a file"
-    "test/data/io-000/post-with-title.golden"
+    "test/golden/data/io-000/post-with-title.golden"
     (withSystemTempDirectory "hakyll-convert" $ \tempDir -> do
       let output_format = "output"
       let file_extension = "aspx"
