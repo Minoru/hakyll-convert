@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Minoru/hakyll-convert.svg?branch=master)](https://travis-ci.org/Minoru/hakyll-convert)
-
 Hakyll-convert provides a library and utility for importing blogs from
 a variety of engines (currently, Blogger and Wordpress) to the [Hakyll][hakyll]
 static site generator.
