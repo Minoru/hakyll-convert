@@ -3,7 +3,6 @@
 module Hakyll.Convert.IO where
 
 import           Data.Maybe                   (fromJust)
-import           Data.Monoid                  ((<>))
 import           Data.Time.Format             (formatTime, defaultTimeLocale)
 import           System.Directory             (createDirectoryIfMissing)
 import           System.FilePath              (takeFileName, takeDirectory, (</>), (<.>))

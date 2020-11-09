@@ -5,7 +5,6 @@ module Hakyll.Convert.Common where
 
 import           Data.Data
 import           Data.Default
-import           Data.Maybe
 import           Data.Text                    (Text)
 import qualified Data.Text                    as T
 import           Data.Time.Clock              (UTCTime)

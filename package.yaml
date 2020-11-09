@@ -27,6 +27,8 @@ dependencies:
   - xml-conduit
   - xml-types
 
+ghc-options: -Wall
+
 library:
   source-dirs: src
   exposed-modules:
@@ -46,6 +48,8 @@ tests:
   golden:
     main: Main.hs
     source-dirs: test/golden
+    # We need an orphan Show DistilledPost instance
+    ghc-options: -Wno-orphans
     dependencies:
       - datetime
       - hakyll-convert
@@ -56,6 +60,8 @@ tests:
   spec:
     main: Main.hs
     source-dirs: test/spec
+    # We need an orphan Show DistilledPost instance
+    ghc-options: -Wno-orphans
     dependencies:
       - datetime
       - hakyll-convert

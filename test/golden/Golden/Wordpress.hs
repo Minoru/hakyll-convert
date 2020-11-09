@@ -3,7 +3,6 @@ module Golden.Wordpress where
 import Data.Maybe (listToMaybe)
 import Test.Tasty (TestTree, testGroup)
 
-import Hakyll.Convert.Common
 import Hakyll.Convert.Wordpress
 
 import Golden.GoldenTestHelpers

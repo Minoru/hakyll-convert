@@ -7,26 +7,15 @@ module Hakyll.Convert.Blogger
     (FullPost(..), readPosts, distill)
   where
 
-import           Control.Applicative
 import           Control.Arrow
 import           Control.Monad
-import           Data.Binary
-import qualified Data.ByteString             as B
-import           Data.Char
-import           Data.Data
 import           Data.Function
 import           Data.List
-import           Data.List
 import           Data.Maybe
-import           Data.Monoid
-import           Data.Text                    (Text)
 import qualified Data.Text                    as T
-import qualified Data.Text.Encoding           as T
-import           Data.Time                    (UTCTime)
 import           Data.Time.Format             (parseTimeM, defaultTimeLocale)
 
 import           Text.Atom.Feed
-import           Text.Atom.Feed.Export
 import           Text.Atom.Feed.Import
 import           Data.XML.Types               (Element(..), Name(..), Node(..), elementChildren)
 import qualified Text.XML                     as XML
@@ -74,7 +63,7 @@ deleteDrafts :: Element -> Element
 deleteDrafts e =
     e { elementNodes = filter isInnocent (elementNodes e) }
   where
-    isInnocent (NodeElement e) = not (isDraft e)
+    isInnocent (NodeElement element) = not (isDraft element)
     isInnocent _ = True
 
 isDraft :: Element -> Bool
@@ -94,18 +83,18 @@ extractPosts :: [Entry] -> [FullPost]
 extractPosts entries =
     map toFullPost blocks
   where
-    toFullPost (uri, entries) = FullPost
+    toFullPost (uri, blockEntries) = FullPost
          { fpPost     = post
          , fpComments = comments
          , fpUri      = uri
          }
        where
-         post = case [ e | Post _ e <- entries ] of
+         post = case [ e | Post _ e <- blockEntries ] of
                     []  -> huh "Block of entries with no post?!"
                     [p] -> p
-                    ps  -> huh "Block of entries with more than one post?!"
-         comments = [ e | Comment _ e <- entries ]
-         huh msg  = error . unlines $ msg : map (txtToString . entryTitle . beEntry) entries
+                    _ps -> huh "Block of entries with more than one post?!"
+         comments = [ e | Comment _ e <- blockEntries ]
+         huh msg  = error . unlines $ msg : map (txtToString . entryTitle . beEntry) blockEntries
     blocks = [ (u,xs) | (Just u, xs) <- blocks_ ] -- drop orphans
     blocks_ = buckets beUri
             $ map identifyEntry
@@ -137,7 +126,7 @@ identifyEntry e =
     getLink ty = case filter (isLink ty) $ entryLinks e of
         []  -> Nothing
         [x] -> Just x
-        xs  -> entryError e (oopsLink ty)
+        _xs -> entryError e (oopsLink ty)
     isLink ty l = linkRel l == Just (Right ty) && linkType l == Just "text/html"
     oopsSelf    = "Was expecting blog posts to have a self link"
     oopsLink ty = T.append "Was expecting entries have at most one link of type " ty

@@ -18,4 +18,4 @@ jobs:
             ~/.stack
 
       - name: Build
-        run: stack test --haddock
+        run: stack test --haddock --ghc-options '-Werror'

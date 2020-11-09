@@ -1,10 +1,9 @@
 module Golden.Blogger where
 
-import Data.Maybe (fromMaybe, listToMaybe)
+import Data.Maybe (listToMaybe)
 import Test.Tasty (TestTree, testGroup)
 
 import Hakyll.Convert.Blogger
-import Hakyll.Convert.Common
 
 import Golden.GoldenTestHelpers
 

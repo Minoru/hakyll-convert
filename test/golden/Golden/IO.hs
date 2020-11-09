@@ -36,7 +36,10 @@ writesUntitledPost =
         , dpTags = ["Tagged", "with", "<3"]
         , dpBody = "<p>This tool is <em>awesome</em>!</p>"
         }
-      savePost tempDir output_format file_extension post
+
+      -- Ignore the generated filename -- we'll just check if the file is at
+      -- the expected place instead.
+      _filename <- savePost tempDir output_format file_extension post
 
       let filename = tempDir </> "output.html"
       LBS.readFile filename)
@@ -57,7 +60,10 @@ writesPostWithTitle =
         , dpTitle = Just "And now for something completely different…"
         , dpBody = "Wonder what it is?"
         }
-      savePost tempDir output_format file_extension post
+
+      -- Ignore the generated filename -- we'll just check if the file is at
+      -- the expected place instead.
+      _filename <- savePost tempDir output_format file_extension post
 
       let filename = tempDir </> "output.aspx"
       LBS.readFile filename)

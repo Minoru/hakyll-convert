@@ -56,14 +56,6 @@ contentTag =
     , XML.namePrefix    = Just "content"
     }
 
-namedBlankElement :: XML.Name -> XML.Element
-namedBlankElement name =
-  XML.Element {
-      XML.elementName = name
-    , XML.elementAttributes = []
-    , XML.elementNodes = []
-    }
-
 namedElement :: XML.Name -> [XML.Node] -> XML.Element
 namedElement name nodes =
   XML.Element {
