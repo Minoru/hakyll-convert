@@ -31,8 +31,11 @@ namesTheFileAccordingToFormat =
           dpUri = "https://example.com/2020/yet-another.post.html"
         , dpDate = fromGregorian 2020 11 6 11 33 46
         }
-      savePost tempDir output_format file_extension post
 
-      let filename = tempDir </> "2020/yet-another-2020^20%_yet-another06d & 11—461133.xyz"
-      exists <- doesFileExist filename
+      let expectedFilename = tempDir </> "2020/yet-another-2020^20%_yet-another06d & 11—461133.xyz"
+
+      filename <- savePost tempDir output_format file_extension post
+      expectedFilename @=? filename
+
+      exists <- doesFileExist expectedFilename
       assertBool "The file with expected name doesn't exist" exists)

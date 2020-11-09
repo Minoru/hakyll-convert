@@ -269,6 +269,7 @@ enumeratesAllCommentAuthors =
     \</div>\n\
     \</div>"
 
+nullDistilledPost :: DistilledPost
 nullDistilledPost = DistilledPost {
     dpUri   = ""
   , dpBody  = ""

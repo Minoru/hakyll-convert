@@ -1,30 +1,12 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
 
-import           Control.Applicative
-import           Control.Arrow
-import           Control.Monad
-import qualified Data.ByteString        as B
-import           Data.Char
-import           Data.Function
-import           Data.List
-import           Data.Maybe
-import           Data.Monoid
 import qualified Data.Text              as T
-import qualified Data.Text.Encoding     as T
-import           Data.Time.Format             (formatTime, defaultTimeLocale)
 import           System.Environment
 import           System.FilePath
 
 import           System.Console.CmdArgs
-import           Text.RSS.Export
-import           Text.RSS.Import
-import           Text.RSS.Syntax
-import           Text.Atom.Feed
-import           Text.Atom.Feed.Export
-import           Text.Atom.Feed.Import
 
-import           Hakyll.Convert.Common
 import           Hakyll.Convert.IO
 import           Hakyll.Convert.OutputFormat
 import qualified Hakyll.Convert.Blogger   as Blogger
@@ -55,6 +37,7 @@ parameters p = modes
         } &= help "Save blog posts Blogger feed into individual posts"
     ] &= program (takeFileName p)
 
+outputFormatHelp :: String
 outputFormatHelp = unlines [
     "Output filenames format (without extension)"
   , "Default: %o"
@@ -75,6 +58,7 @@ outputFormatHelp = unlines [
 --
 -- ---------------------------------------------------------------------
 
+main :: IO ()
 main = do
     p      <- getProgName
     config <- cmdArgs (parameters p)
@@ -94,8 +78,8 @@ mainBlogger config = do
         Nothing -> fail $ "Could not understand Atom feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process feed = do
-      let distilled = Blogger.distill (extract_comments config) feed
+    process fd = do
+      let distilled = Blogger.distill (extract_comments config) fd
       fname <- savePost (outputDir config) (output_format config) "html" distilled
       putStrLn fname
 
@@ -106,7 +90,7 @@ mainWordPress config = do
         Nothing -> fail $ "Could not understand RSS feed: " ++ feed config
         Just fd -> mapM_ process fd
   where
-    process feed = do
-      let distilled = Wordpress.distill (extract_comments config) feed
+    process fd = do
+      let distilled = Wordpress.distill (extract_comments config) fd
       fname <- savePost (outputDir config) (output_format config) "markdown" distilled
       putStrLn fname

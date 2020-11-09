@@ -55,6 +55,7 @@ acceptableFormats = M.fromList [
   , ('S', fmtSecond) -- publication second
   ]
 
+fmtOriginalPath :: DistilledPost -> T.Text
 fmtOriginalPath post =
     T.pack
   . dropTrailingSlash
@@ -75,18 +76,33 @@ fmtOriginalPath post =
     dropPrefix (x:xs) (y:ys) | x == y    = dropPrefix xs ys
     dropPrefix left right = (left,right)
 
+fmtSlug :: DistilledPost -> T.Text
 fmtSlug post =
     T.reverse
   . (T.takeWhile (/= '/'))
   . T.reverse
   $ fmtOriginalPath post
 
+fmtDate :: String -> DistilledPost -> T.Text
 fmtDate format = T.pack . (formatTime defaultTimeLocale format) . dpDate
 
+fmtYear2 :: DistilledPost -> T.Text
 fmtYear2  = fmtDate "%y"
+
+fmtYear4 :: DistilledPost -> T.Text
 fmtYear4  = fmtDate "%Y"
+
+fmtMonth :: DistilledPost -> T.Text
 fmtMonth  = fmtDate "%m"
+
+fmtDay :: DistilledPost -> T.Text
 fmtDay    = fmtDate "%d"
+
+fmtHour :: DistilledPost -> T.Text
 fmtHour   = fmtDate "%H"
+
+fmtMinute :: DistilledPost -> T.Text
 fmtMinute = fmtDate "%M"
+
+fmtSecond :: DistilledPost -> T.Text
 fmtSecond = fmtDate "%S"

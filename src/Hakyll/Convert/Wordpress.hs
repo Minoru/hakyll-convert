@@ -4,14 +4,10 @@ module Hakyll.Convert.Wordpress
     (readPosts, distill)
   where
 
-import           Control.Applicative
 import           Control.Monad
-import qualified Data.ByteString as B
 import           Data.Maybe
 import qualified Data.Text              as T
-import qualified Data.Text.Encoding     as T
-import           Data.Time              (UTCTime)
-import           Data.Time.Format       (parseTimeM, formatTime, defaultTimeLocale, rfc822DateFormat)
+import           Data.Time.Format       (parseTimeM, defaultTimeLocale, rfc822DateFormat)
 
 import           Text.RSS.Import
 import           Text.RSS.Syntax
@@ -122,8 +118,8 @@ findElements name element =
 -- | Find first immediate child of `root` which is named `name`.
 findChild :: Name -> Element -> Maybe Element
 findChild name element =
-  let children = elementChildren element
-      matching = filter (\child -> elementName child == name) children
+  let subelements = elementChildren element
+      matching = filter (\child -> elementName child == name) subelements
   in listToMaybe matching
 
 -- | The contents of the element (ignoring non-text sub-elements).
