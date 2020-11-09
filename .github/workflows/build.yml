@@ -25,7 +25,7 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          key: ${{ matrix.plan.os }}-${{ hashFiles('package.yaml', 'stack.yaml', 'stack.yaml.lock') }}-r2
+          key: ${{ matrix.plan.os }}-${{ hashFiles('package.yaml', 'stack.yaml', 'stack.yaml.lock') }}-r3
           path:
             ~/.stack
 
