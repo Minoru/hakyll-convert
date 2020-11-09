@@ -7,10 +7,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-10.15]
+        plan:
+          - os: ubuntu-20.04
+            extra_stack_args: ""
+          - os: macos-10.15
+            extra_stack_args: ""
+          - os: windows-2019
+            # Skip golden tests since they depend on Unix line endings.
+            extra_stack_args: "--skip golden"
 
-    name: Stack on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Stack on ${{ matrix.plan.os }}
+    runs-on: ${{ matrix.plan.os }}
 
     steps:
       - uses: actions/checkout@v2
@@ -18,9 +25,9 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          key: ${{ matrix.os }}-${{ hashFiles('package.yaml', 'stack.yaml', 'stack.yaml.lock') }}-r2
+          key: ${{ matrix.plan.os }}-${{ hashFiles('package.yaml', 'stack.yaml', 'stack.yaml.lock') }}-r2
           path:
             ~/.stack
 
       - name: Build
-        run: stack test --haddock --ghc-options '-Werror'
+        run: stack test --haddock --ghc-options '-Werror' ${{ matrix.plan.extra_stack_args }}
