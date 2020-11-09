@@ -17,7 +17,7 @@ import           Hakyll.Convert.OutputFormat  (formatPath)
 -- | Save a post along with its comments in a format that Hakyll understands.
 --
 -- Returns the filename of the file that was written.
-savePost :: FilePath -> T.Text -> T.Text -> DistilledPost -> IO T.Text
+savePost :: FilePath -> T.Text -> T.Text -> DistilledPost -> IO FilePath
 savePost odir oformat ext post = do
     createDirectoryIfMissing True (takeDirectory fname)
     B.writeFile fname . T.encodeUtf8 $ T.unlines
@@ -31,7 +31,7 @@ savePost odir oformat ext post = do
         , formatBody (dpBody post)
         ]
 
-    return $ T.pack fname
+    return fname
   where
     metadata k v = k <> ": " <> v
     --

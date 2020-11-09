@@ -12,7 +12,6 @@ import           Data.Maybe
 import           Data.Monoid
 import qualified Data.Text              as T
 import qualified Data.Text.Encoding     as T
-import qualified Data.Text.IO           as TIO
 import           Data.Time.Format             (formatTime, defaultTimeLocale)
 import           System.Environment
 import           System.FilePath
@@ -98,7 +97,7 @@ mainBlogger config = do
     process feed = do
       let distilled = Blogger.distill (extract_comments config) feed
       fname <- savePost (outputDir config) (output_format config) "html" distilled
-      TIO.putStrLn fname
+      putStrLn fname
 
 mainWordPress :: Config -> IO ()
 mainWordPress config = do
@@ -110,4 +109,4 @@ mainWordPress config = do
     process feed = do
       let distilled = Wordpress.distill (extract_comments config) feed
       fname <- savePost (outputDir config) (output_format config) "markdown" distilled
-      TIO.putStrLn fname
+      putStrLn fname
