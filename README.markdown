@@ -1,4 +1,4 @@
-Hakyll-convert provides a library and utility for importing blogs from
+Hakyll-convert provides a library and a program for importing blogs from
 a variety of engines (currently, Blogger and Wordpress) to the [Hakyll][hakyll]
 static site generator.
 
