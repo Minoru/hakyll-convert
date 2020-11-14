@@ -1,0 +1,33 @@
+name: Code formatting
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Run Ormolu
+    runs-on: ubuntu-20.04
+
+    env:
+      ormolu_version: 0.1.2.0
+
+    steps:
+      - name: Cache Ormolu installed from source
+        uses: actions/cache@v2
+        with:
+          key: ormolu-${{ env.ormolu_version }}
+          path:
+            ~/.stack
+            ~/.local/bin
+
+      - name: Install Ormolu
+        run: stack install ormolu-${{ env.ormolu_version }}
+
+      - uses: actions/checkout@v2
+
+      - name: Run Ormolu
+        run: ~/.local/bin/ormolu --mode inplace $(find -name '*.hs')
+
+      - name: Check if Ormolu introduced changes
+        # --exit-code forces git-diff to exit with code 1 if there were
+        # changes; that'll fail the build, which is exactly what we need
+        run: git diff --exit-code
