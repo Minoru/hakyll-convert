@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - name: Cache Ormolu installed from source
+        id: cache
         uses: actions/cache@v2
         with:
           key: ormolu-${{ env.ormolu_version }}
@@ -20,6 +21,7 @@ jobs:
             ~/.local/bin
 
       - name: Install Ormolu
+        if: steps.cache.outputs.cache-hit != 'true'
         run: stack install ormolu-${{ env.ormolu_version }}
 
       - uses: actions/checkout@v2
