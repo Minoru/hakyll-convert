@@ -3,11 +3,11 @@
 
 module Spec.Wordpress (tests) where
 
-import Data.DateTime (fromGregorian)
 import qualified Data.Text as T
 import qualified Data.XML.Types as XML
 import Hakyll.Convert.Common (DistilledPost (..))
 import Hakyll.Convert.Wordpress
+import Spec.SpecHelpers
 import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.HUnit
 import qualified Text.RSS.Syntax as RSS

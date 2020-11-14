@@ -3,8 +3,9 @@
 module Golden.IO where
 
 import qualified Data.ByteString.Lazy.Char8 as LBS
-import Data.DateTime (fromGregorian)
 import Data.Default (def)
+import qualified Data.Time.Calendar as Calendar
+import Data.Time.Clock (UTCTime (..), secondsToDiffTime)
 import Hakyll.Convert.Common (DistilledPost (..))
 import Hakyll.Convert.IO (savePost)
 import System.FilePath ((</>))
@@ -70,3 +71,9 @@ writesPostWithTitle =
         let filename = tempDir </> "output.aspx"
         LBS.readFile filename
     )
+
+fromGregorian :: Integer -> Int -> Int -> Int -> Int -> Int -> UTCTime
+fromGregorian year month day hours minutes seconds =
+  let utcDay = Calendar.fromGregorian year month day
+      utcSeconds = secondsToDiffTime $ fromIntegral $ seconds + 60 * (minutes + 60 * hours)
+   in UTCTime utcDay utcSeconds

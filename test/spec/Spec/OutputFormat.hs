@@ -2,12 +2,12 @@
 
 module Spec.OutputFormat (tests) where
 
-import Data.DateTime (fromGregorian)
 import Data.Default
 import Data.Maybe (isJust)
 import qualified Data.Text as T
 import Hakyll.Convert.Common (DistilledPost (..))
 import Hakyll.Convert.OutputFormat
+import Spec.SpecHelpers
 import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.HUnit
 import Test.Tasty.QuickCheck

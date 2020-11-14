@@ -1,3 +1,11 @@
+## 0.3.0.2
+
+### Removed
+- Dependency on `datetime`. That package is absent from Stackage, seems
+    unmaintained, is licensed under GPL (limiting hakyll-convert's licensing),
+    and is easy to replace.
+
+
 ## 0.3.0.1
 
 ### Added

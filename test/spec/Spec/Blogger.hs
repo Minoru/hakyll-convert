@@ -3,10 +3,10 @@
 
 module Spec.Blogger (tests) where
 
-import Data.DateTime (fromGregorian)
 import qualified Data.Text as T
 import Hakyll.Convert.Blogger
 import Hakyll.Convert.Common (DistilledPost (..))
+import Spec.SpecHelpers
 import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.ExpectedFailure (expectFail)
 import Test.Tasty.HUnit

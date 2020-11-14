@@ -2,10 +2,10 @@
 
 module Spec.IO (tests) where
 
-import Data.DateTime (fromGregorian)
 import Data.Default (def)
 import Hakyll.Convert.Common (DistilledPost (..))
 import Hakyll.Convert.IO (savePost)
+import Spec.SpecHelpers
 import System.Directory (doesFileExist)
 import System.FilePath ((</>))
 import System.IO.Temp (withSystemTempDirectory)
