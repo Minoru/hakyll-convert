@@ -15,11 +15,10 @@ We aim to:
 Usage
 -----
 
-1. You should make a dump (backup) of all the posts in your existing
-   Blogger/Wordpress blog. See [this post in the Blogger Help
-   Center](https://support.google.com/blogger/answer/41387) for details.
-   (Instructions for Wordpress will be available once we actually write them.
-   Sorry.)
+1. You should make a dump (backup) of all the posts in your existing blog. For
+   Blogger, see [this post in the Help
+   Center](https://support.google.com/blogger/answer/41387). For Wordpress,
+   [see this support page](https://wordpress.com/support/export/).
 
 2. Install `hakyll-convert` using `cabal-install`:
 
