@@ -14,13 +14,13 @@ jobs:
       - name: Cache HLint installed from source
         uses: actions/cache@v2
         with:
-          key: hlint-$hlint_version
+          key: hlint-${{ env.hlint_version }}
           path:
             ~/.stack
             ~/.local/bin
 
       - name: Install HLint
-        run: stack install hlint-$hlint_version
+        run: stack install hlint-${{ env.hlint_version }}
 
       - uses: actions/checkout@v2
 
