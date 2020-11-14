@@ -1,5 +1,5 @@
 name: hakyll-convert
-version: 0.2.0.0
+version: 0.3.0.1
 synopsis: Convert from other blog engines to Hakyll.
 description: WordPress and Blogger only let one export posts in
              a limited number of formats, none of which are supported
@@ -11,6 +11,9 @@ license: BSD3
 license-file: LICENSE
 author: Eric Kow <eric.kow@gmail.com>, Alexander Batischev <eual.jp@gmail.com>
 maintainer: Alexander Batischev <eual.jp@gmail.com>
+extra-source-files:
+  - CHANGELOG.md
+category: Tools
 
 # These are part of the library's API, so might as well require them for all
 # the targets.

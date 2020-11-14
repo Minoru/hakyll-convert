@@ -1,3 +1,13 @@
+## 0.3.0.1
+
+### Added
+- CHANGELOG.md is now part of sdist tarball.
+- Cabal file now puts halyll-convert under "Tools" category.
+
+### Fixed
+- Version number in the Cabal file.
+
+
 ## 0.3.0.0
 
 ### Added
