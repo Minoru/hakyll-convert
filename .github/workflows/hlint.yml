@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           key: hlint-${{ env.hlint_version }}
-          path:
+          path: |
             ~/.stack
             ~/.local/bin
 

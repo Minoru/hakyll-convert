@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           key: ormolu-${{ env.ormolu_version }}
-          path:
+          path: |
             ~/.stack
             ~/.local/bin
 
