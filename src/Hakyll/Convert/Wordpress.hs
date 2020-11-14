@@ -61,7 +61,7 @@ distill extractComments item = DistilledPost
         , nameNamespace = Just "http://purl.org/rss/1.0/modules/content/"
         , namePrefix    = Just "content"
         }
-    comments = T.intercalate "\n" $ map formatComment $ commentTags
+    comments = T.intercalate "\n" $ map formatComment commentTags
     commentTags = rssItemOther item >>= findElements commentTag
     commentTag = wordpressTag "comment"
     --

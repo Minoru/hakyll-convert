@@ -1,0 +1,28 @@
+name: HLint
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Run HLint
+    runs-on: ubuntu-20.04
+
+    env:
+      hlint_version: 3.2.1
+
+    steps:
+      - name: Cache HLint installed from source
+        uses: actions/cache@v2
+        with:
+          key: hlint-$hlint_version
+          path:
+            ~/.stack
+            ~/.local/bin
+
+      - name: Install HLint
+        run: stack install hlint-$hlint_version
+
+      - uses: actions/checkout@v2
+
+      - name: Run HLint
+        run: ~/.local/bin/hlint .

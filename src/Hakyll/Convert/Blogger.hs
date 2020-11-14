@@ -1,4 +1,3 @@
-{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE OverloadedStrings  #-}
 {-# LANGUAGE FlexibleContexts   #-}
 {-# LANGUAGE ExplicitForAll     #-}
@@ -182,9 +181,7 @@ distill extractComments fp = DistilledPost
       , "</div>"
       ]
       where
-      pubdate = case entryPublished c of
-                    Just d  -> d
-                    Nothing -> "unknown date"
+      pubdate = fromMaybe "unknown date" (entryPublished c)
       author = T.unwords $ map personName (entryAuthors c)
       comment = fromContent $ entryContent c
     --
@@ -208,7 +205,7 @@ distill extractComments fp = DistilledPost
 
 entryError :: forall a. Entry -> T.Text -> a
 entryError e msg =
-    error $ (T.unpack msg) ++ " [on entry " ++ (T.unpack $ entryId e) ++ "]\n" ++ show e
+    error $ (T.unpack msg) ++ " [on entry " ++ (T.unpack (entryId e)) ++ "]\n" ++ show e
 
 buckets :: Ord b => (a -> b) -> [a] -> [ (b,[a]) ]
 buckets f = map (first head . unzip)
