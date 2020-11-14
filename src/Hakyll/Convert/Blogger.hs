@@ -117,7 +117,8 @@ identifyEntry e =
       Nothing -> Orphan e
   where
     isPost = any (isBloggerCategoryOfType "post") . entryCategories
-    postUrl = T.takeWhile (/= '?') . linkHref
+    postUrl = T.takeWhile (/= '?') . replaceSchema . linkHref
+    replaceSchema url = maybe url (T.append "https://") (T.stripPrefix "http://" url)
     getLink ty = case filter (isLink ty) $ entryLinks e of
       [] -> Nothing
       [x] -> Just x
