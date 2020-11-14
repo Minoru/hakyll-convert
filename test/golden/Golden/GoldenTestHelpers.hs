@@ -45,5 +45,5 @@ readAndDistillHelper readPosts distill dir testName selector =
   let fut filepath = do
         posts <- readPosts filepath
         let extractComments = True
-        return $ fmap (\items -> map (distill extractComments) items) posts
+        return $ fmap (map (distill extractComments)) posts
   in readPostsHelper fut dir testName selector

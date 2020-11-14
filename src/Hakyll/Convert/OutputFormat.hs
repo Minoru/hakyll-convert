@@ -22,7 +22,7 @@ validOutputFormat format
         Nothing -> False
 
 formatPath :: T.Text -> DistilledPost -> Maybe T.Text
-formatPath format post = helper [] format >>= return.T.concat
+formatPath format post = T.concat <$> helper [] format
   where
   helper acc input =
     case T.uncons input of
