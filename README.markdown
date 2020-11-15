@@ -1,5 +1,5 @@
 Hakyll-convert provides a library and a program for importing blogs from
-a variety of engines (currently, Blogger and Wordpress) to the [Hakyll][hakyll]
+a variety of engines (currently, Blogger and WordPress) to the [Hakyll][hakyll]
 static site generator.
 
 We aim to:
@@ -17,7 +17,7 @@ Usage
 
 1. You should make a dump (backup) of all the posts in your existing blog. For
    Blogger, see [this post in the Help
-   Center](https://support.google.com/blogger/answer/41387). For Wordpress,
+   Center](https://support.google.com/blogger/answer/41387). For WordPress,
    [see this support page](https://wordpress.com/support/export/).
 
 2. Install `hakyll-convert` using `cabal-install`:
@@ -33,7 +33,7 @@ Usage
      $ hakyll-convert --format=blogger backup.atom posts
      ```
 
-   - if it's a Wordpress backup:
+   - if it's a WordPress backup:
 
      ```console
      $ hakyll-convert --format=wordpress backup.atom posts
