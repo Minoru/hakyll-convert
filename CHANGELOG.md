@@ -1,3 +1,9 @@
+## 0.3.0.3
+
+### Added
+- Include golden outputs (and inputs) in the source distribution.
+
+
 ## 0.3.0.2
 
 ### Removed

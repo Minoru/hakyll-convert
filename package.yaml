@@ -1,5 +1,5 @@
 name: hakyll-convert
-version: 0.3.0.2
+version: 0.3.0.3
 synopsis: Convert from other blog engines to Hakyll.
 description: WordPress and Blogger only let one export posts in
              a limited number of formats, none of which are supported
@@ -13,6 +13,17 @@ author: Eric Kow <eric.kow@gmail.com>, Alexander Batischev <eual.jp@gmail.com>
 maintainer: Alexander Batischev <eual.jp@gmail.com>
 extra-source-files:
   - CHANGELOG.md
+  - test/golden/data/blogger-000/input.xml
+  - test/golden/data/blogger-000/*.golden
+  - test/golden/data/blogger-001/input.xml
+  - test/golden/data/blogger-001/*.golden
+  - test/golden/data/blogger-002/input.xml
+  - test/golden/data/blogger-002/*.golden
+  - test/golden/data/io-000/*.golden
+  - test/golden/data/wordpress-000/input.xml
+  - test/golden/data/wordpress-000/*.golden
+  - test/golden/data/wordpress-001/input.xml
+  - test/golden/data/wordpress-001/*.golden
 category: Tools
 
 # These are part of the library's API, so might as well require them for all
