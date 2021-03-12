@@ -1,3 +1,14 @@
+## 0.3.0.4
+
+### Changed
+- Allow tasty 1.3 and 1.4
+- Allow tasty-expected-failure 0.12
+
+### Fixed
+- Brittle golden tests for Wordpress (which broke because of an update to the
+    "feed" package)
+
+
 ## 0.3.0.3
 
 ### Added
