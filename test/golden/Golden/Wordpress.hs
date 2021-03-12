@@ -4,6 +4,19 @@ import Data.Maybe (listToMaybe)
 import Golden.GoldenTestHelpers
 import Hakyll.Convert.Wordpress
 import Test.Tasty (TestTree, testGroup)
+import Text.RSS.Syntax (RSSItem (..))
+
+instance CustomShow RSSItem where
+  customShow item =
+    show
+      ( rssItemTitle item,
+        rssItemLink item,
+        rssItemAuthor item,
+        rssItemCategories item,
+        rssItemGuid item,
+        rssItemPubDate item,
+        rssItemOther item
+      )
 
 goldenTests :: TestTree
 goldenTests =

@@ -5,6 +5,9 @@ import Golden.GoldenTestHelpers
 import Hakyll.Convert.Blogger
 import Test.Tasty (TestTree, testGroup)
 
+instance CustomShow FullPost where
+  customShow = show
+
 goldenTests :: TestTree
 goldenTests =
   testGroup

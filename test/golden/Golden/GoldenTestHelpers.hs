@@ -8,10 +8,16 @@ import Hakyll.Convert.Common
 import Test.Tasty (TestTree)
 import Test.Tasty.Golden (goldenVsString)
 
+class CustomShow a where
+  customShow :: a -> String
+
 deriving instance Show DistilledPost
 
+instance CustomShow DistilledPost where
+  customShow = show
+
 readPostsHelper ::
-  Show a =>
+  CustomShow a =>
   (FilePath -> IO (Maybe [a])) ->
   String ->
   String ->
@@ -28,7 +34,7 @@ readPostsHelper readPosts dir testName selector =
             LBS.empty
             ( posts
                 >>= selector
-                >>= (return . LBS.pack . show)
+                >>= (return . LBS.pack . customShow)
             )
     )
   where
