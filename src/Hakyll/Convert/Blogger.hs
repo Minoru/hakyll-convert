@@ -125,7 +125,7 @@ identifyEntry e =
       _xs -> entryError e (oopsLink ty)
     isLink ty l = linkRel l == Just (Right ty) && linkType l == Just "text/html"
     oopsSelf = "Was expecting blog posts to have a self link"
-    oopsLink ty = T.append "Was expecting entries have at most one link of type " ty
+    oopsLink = T.append "Was expecting entries have at most one link of type "
 
 isBloggerCategory :: Category -> Bool
 isBloggerCategory =

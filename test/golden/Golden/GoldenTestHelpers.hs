@@ -38,7 +38,7 @@ readPostsHelper readPosts dir testName selector =
             )
     )
   where
-    spaceToDash = \c -> if c == ' ' then '-' else c
+    spaceToDash c = if c == ' ' then '-' else c
 
 readAndDistillHelper ::
   (FilePath -> IO (Maybe [a])) ->
