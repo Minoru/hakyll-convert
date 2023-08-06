@@ -42,6 +42,6 @@ savePost odir oformat ext post = do
       "untitled (" <> T.unwords firstFewWords <> "…)"
       where
         firstFewWords = T.splitOn "-" . T.pack $ takeFileName postPath
-    formatDate = T.pack . formatTime defaultTimeLocale "%FT%TZ" --for hakyll
+    formatDate = T.pack . formatTime defaultTimeLocale "%FT%TZ" -- for hakyll
     formatTags = T.intercalate ","
     formatBody = id
