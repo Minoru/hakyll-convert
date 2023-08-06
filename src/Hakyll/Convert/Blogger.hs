@@ -225,7 +225,7 @@ entryError :: forall a. Entry -> T.Text -> a
 entryError e msg =
   error $ (T.unpack msg) ++ " [on entry " ++ (T.unpack (entryId e)) ++ "]\n" ++ show e
 
-buckets :: Ord b => (a -> b) -> [a] -> [(b, [a])]
+buckets :: (Ord b) => (a -> b) -> [a] -> [(b, [a])]
 buckets f =
   map (first head . unzip)
     . groupBy ((==) `on` fst)

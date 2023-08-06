@@ -17,7 +17,7 @@ instance CustomShow DistilledPost where
   customShow = show
 
 readPostsHelper ::
-  CustomShow a =>
+  (CustomShow a) =>
   (FilePath -> IO (Maybe [a])) ->
   String ->
   String ->

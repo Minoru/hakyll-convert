@@ -5,15 +5,15 @@ on: [push, pull_request]
 jobs:
   build:
     name: Run Ormolu
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     env:
-      ormolu_version: 0.3.1.0
+      ormolu_version: "0.5.3.0"
 
     steps:
       - name: Cache Ormolu installed from source
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ormolu-${{ env.ormolu_version }}
           path: |
@@ -22,9 +22,9 @@ jobs:
 
       - name: Install Ormolu
         if: steps.cache.outputs.cache-hit != 'true'
-        run: stack install ormolu-${{ env.ormolu_version }}
+        run: stack --resolver lts-21.6 install ormolu-${{ env.ormolu_version }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Run Ormolu
         run: ~/.local/bin/ormolu --mode inplace $(find -name '*.hs')

@@ -2,7 +2,6 @@
 
 module Hakyll.Convert.Wordpress (readPosts, distill) where
 
-import Control.Monad
 import Data.Maybe
 import qualified Data.Text as T
 import Data.Time.Format (defaultTimeLocale, parseTimeM, rfc822DateFormat)
@@ -70,11 +69,7 @@ distill extractComments item =
       Nothing -> fromJust $ parseTime' "Thu, 01 Jan 1970 00:00:00 UTC"
       Just d -> d
     parseTime' d =
-      msum $
-        map
-          (\f -> parseTimeM True defaultTimeLocale f (T.unpack d))
-          [ rfc822DateFormat
-          ]
+      parseTimeM True defaultTimeLocale rfc822DateFormat (T.unpack d)
 
 -- ---------------------------------------------------------------------
 -- helpers

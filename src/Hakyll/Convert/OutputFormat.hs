@@ -14,9 +14,9 @@ validOutputFormat :: T.Text -> Bool
 validOutputFormat format
   | T.null format = False
   | otherwise =
-    case formatPath format def of
-      Just _ -> True
-      Nothing -> False
+      case formatPath format def of
+        Just _ -> True
+        Nothing -> False
 
 formatPath :: T.Text -> DistilledPost -> Maybe T.Text
 formatPath format post = T.concat <$> helper [] format
@@ -58,7 +58,8 @@ fmtOriginalPath post =
   T.pack
     . dropTrailingSlash
     . dropExtensions
-    $ chopUri $ T.unpack (dpUri post)
+    $ chopUri
+    $ T.unpack (dpUri post)
   where
     dropTrailingSlash = reverse . dropWhile (== '/') . reverse
     dropDomain path =
@@ -72,7 +73,7 @@ fmtOriginalPath post =
       error $
         "We've wrongly assumed that blog post URIs start with http:// or https://, but we got: " ++ u
 
-    dropPrefix :: Eq a => [a] -> [a] -> ([a], [a])
+    dropPrefix :: (Eq a) => [a] -> [a] -> ([a], [a])
     dropPrefix (x : xs) (y : ys) | x == y = dropPrefix xs ys
     dropPrefix left right = (left, right)
 
