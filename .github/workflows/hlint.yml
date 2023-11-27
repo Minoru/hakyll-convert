@@ -22,7 +22,7 @@ jobs:
 
       - name: Install HLint
         if: steps.cache.outputs.cache-hit != 'true'
-        run: stack --resolver lts-21.6 install hlint-${{ env.hlint_version }}
+        run: stack --resolver lts-21.22 install hlint-${{ env.hlint_version }}
 
       - uses: actions/checkout@v3
 
