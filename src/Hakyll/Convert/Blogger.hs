@@ -4,10 +4,8 @@
 
 module Hakyll.Convert.Blogger (FullPost (..), readPosts, distill) where
 
-import Control.Arrow
 import Control.Monad
-import Data.Function
-import Data.List
+import qualified Data.Map as M
 import Data.Maybe
 import qualified Data.Text as T
 import Data.Time.Format (defaultTimeLocale, parseTimeM)
@@ -226,11 +224,7 @@ entryError e msg =
   error $ (T.unpack msg) ++ " [on entry " ++ (T.unpack (entryId e)) ++ "]\n" ++ show e
 
 buckets :: (Ord b) => (a -> b) -> [a] -> [(b, [a])]
-buckets f =
-  map (first head . unzip)
-    . groupBy ((==) `on` fst)
-    . sortBy (compare `on` fst)
-    . map (\x -> (f x, x))
+buckets f = M.toList . M.fromListWith (++) . (map (\x -> (f x, [x])))
 
 -- | Find all non-nested elements which are named `name`, starting with `root`.
 -- ("Non-nested" means we don't search sub-elements of an element that's named
