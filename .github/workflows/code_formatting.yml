@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     env:
-      ormolu_version: "0.5.3.0"
+      ormolu_version: "0.7.2.0"
 
     steps:
       - name: Cache Ormolu installed from source
@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Ormolu
         if: steps.cache.outputs.cache-hit != 'true'
-        run: stack --resolver lts-21.6 install ormolu-${{ env.ormolu_version }}
+        run: stack --resolver lts-22.23 install ormolu-${{ env.ormolu_version }}
 
       - uses: actions/checkout@v4
 
