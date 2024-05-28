@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Cache HLint installed from source
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: hlint-${{ env.hlint_version }}
           path: |
@@ -24,7 +24,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: stack --resolver lts-21.22 install hlint-${{ env.hlint_version }}
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run HLint
         run: ~/.local/bin/hlint .
