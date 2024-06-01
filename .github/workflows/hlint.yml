@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-22.04
 
     env:
-      hlint_version: "3.5"
+      hlint_version: "3.6.1"
 
     steps:
       - name: Cache HLint installed from source
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: hlint-${{ env.hlint_version }}
           path: |
@@ -22,9 +22,9 @@ jobs:
 
       - name: Install HLint
         if: steps.cache.outputs.cache-hit != 'true'
-        run: stack --resolver lts-21.22 install hlint-${{ env.hlint_version }}
+        run: stack --resolver lts-22.23 install hlint-${{ env.hlint_version }}
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run HLint
         run: ~/.local/bin/hlint .
