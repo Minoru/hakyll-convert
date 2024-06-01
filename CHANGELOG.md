@@ -1,3 +1,22 @@
+## 0.3.0.5
+
+### Changed
+
+- Allow bytestring 0.11
+- Allow text 2.0 and 2.1
+- Allow time 1.11, 1.12, and 1.14
+- Allow tasty 1.5
+- Allow bytestring 0.12
+- Allow filepath 1.5
+- Allow containers 0.7
+
+### Fixed
+
+- Some HLint lints
+- `-Wx-partial` warning from GHC 9.8
+
+
+
 ## 0.3.0.4
 
 ### Changed

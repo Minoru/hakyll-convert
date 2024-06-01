@@ -1,5 +1,5 @@
 name: hakyll-convert
-version: 0.3.0.4
+version: 0.3.0.5
 synopsis: Convert from other blog engines to Hakyll.
 description: WordPress and Blogger only let one export posts in
              a limited number of formats, none of which are supported
