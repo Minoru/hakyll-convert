@@ -46,7 +46,7 @@ library:
   dependencies:
     - bytestring >= 0.10 && < 0.13
     - containers >= 0.6 && < 0.8
-    - data-default >= 0.7 && < 0.8
+    - data-default >= 0.7 && < 0.9
     - directory >= 1.3 && < 1.4
     - feed >= 1.3 && < 1.4
     - filepath >= 1.4 && < 1.6
@@ -72,7 +72,7 @@ tests:
       - hakyll-convert
 
       - bytestring >= 0.10 && < 0.13
-      - data-default >= 0.7 && < 0.8
+      - data-default >= 0.7 && < 0.9
       - feed >= 1.3 && < 1.4
       - filepath >= 1.4 && < 1.6
       - tasty >= 1.2 && < 1.6
@@ -88,7 +88,7 @@ tests:
     dependencies:
       - hakyll-convert
 
-      - data-default >= 0.7 && < 0.8
+      - data-default >= 0.7 && < 0.9
       - directory >= 1.3 && < 1.4
       - feed >= 1.3 && < 1.4
       - filepath >= 1.4 && < 1.6
